@@ -1,0 +1,24 @@
+{
+  "name": "colegio-jjr",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "cms": "decap-server",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "latest",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "latest",
+    "decap-cms-app": "^3.16.2",
+    "sharp": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "decap-server": "^3.11.2"
+  }
+}

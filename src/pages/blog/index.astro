@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const formatDate = (date: Date) => new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(date);
+---
+
+<BaseLayout title="Por dentro do JJR | Blog do Colégio JJR" description="Eventos, práticas pedagógicas, tecnologia e inovação no cotidiano do Colégio JJR." pageType="CollectionPage">
+  <header class="page-hero"><div class="shell"><span class="eyebrow">Por dentro do JJR</span><h1>O que acontece quando aprender ganha vida.</h1><p>Histórias, projetos e encontros que mostram a escola para além da sala de aula.</p></div></header>
+  <section class="section-tight"><div class="shell blog-grid">
+    {posts.map((post) => (
+      <article class="card">
+        <a href={`/blog/${post.id}/`}><img src={post.data.image} alt={post.data.imageAlt} loading="lazy" /></a>
+        <div class="card-body">
+          <div class="post-meta"><span>{post.data.category}</span><time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time></div>
+          <h2 style="font-size:1.45rem"><a href={`/blog/${post.id}/`}>{post.data.title}</a></h2>
+          <p>{post.data.description}</p>
+          <a class="text-link" href={`/blog/${post.id}/`}>Ler artigo</a>
+        </div>
+      </article>
+    ))}
+  </div></section>
+</BaseLayout>

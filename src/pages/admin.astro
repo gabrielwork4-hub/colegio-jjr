@@ -1,0 +1,22 @@
+---
+const configUrl = '/admin/config.yml';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="same-origin" />
+    <title>Conteúdo | Colégio JJR</title>
+    <link href={configUrl} type="text/yaml" rel="cms-config-url" />
+  </head>
+  <body>
+    <script>
+      import CMS from 'decap-cms-app';
+
+      CMS.init();
+    </script>
+  </body>
+</html>

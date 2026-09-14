@@ -1,0 +1,68 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+site_url: https://colegiojjr.com.br
+display_url: https://colegiojjr.com.br
+
+collections:
+  - name: blog
+    label: Notícias e artigos
+    label_singular: Notícia ou artigo
+    folder: src/content/blog
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Título
+        name: title
+        widget: string
+        hint: "Use uma frase clara, como uma pergunta que uma família faria."
+      - label: Descrição para busca e redes sociais
+        name: description
+        widget: text
+        hint: "Resumo de até 160 caracteres."
+      - label: Data de publicação
+        name: publishedAt
+        widget: datetime
+        format: YYYY-MM-DD
+        date_format: DD/MM/YYYY
+        time_format: false
+      - label: Categoria
+        name: category
+        widget: select
+        options:
+          - Eventos & Comunidade
+          - Práticas Pedagógicas
+          - Tecnologia & Inovação
+      - label: Autor
+        name: author
+        widget: string
+        default: Coordenação Pedagógica & Corpo Docente
+      - label: Imagem de destaque
+        name: image
+        widget: image
+        choose_url: true
+      - label: Descrição da imagem
+        name: imageAlt
+        widget: string
+        hint: "Descreva o que aparece na imagem para leitores de tela e mecanismos de busca."
+      - label: Destacar na página inicial
+        name: featured
+        widget: boolean
+        default: false
+        required: false
+      - label: Salvar como rascunho
+        name: draft
+        widget: boolean
+        default: true
+        required: false
+      - label: Texto do artigo
+        name: body
+        widget: markdown

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const segments = [
+  {
+    title: 'Educação Infantil', subtitle: 'O Pequeno Galileu',
+    text: 'Os primeiros anos ganham significado em territórios de aprendizagem que acolhem a curiosidade, o brincar e a descoberta.',
+    items: ['Metodologia construtivista', '26 anos de experiência do grupo', 'Monitoramento por câmeras para os pais'],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBtBdkZvANlq9HpZaMLUIy4L8kvSV20k-UOqW6gnb5baLcZU7hl_7rJy8p4ljpOtRbko9TbVKbGeM8lo-Wwo_5lzR4IGAma4RfTgl7YAgYoE6NmwdwUztbWWdYZetLe7Ms5wjEVcRldoCoOTjC7I0ef_h2rQ72kxh3ktL-EdvraW9i5TyXhwXfF1_GtCA8as9neAp4mHqMyDU7FUt9kDqSSDt1MSluUqGwkkUx0_w9SFkEQDRljgLEU',
+    external: true,
+  },
+  {
+    title: 'Ensino Fundamental I', subtitle: 'Base forte para aprender a aprender',
+    text: 'Alfabetização, raciocínio e convivência avançam juntos, com proximidade entre professores, estudantes e famílias.',
+    items: ['Educação por Princípios', 'Escola da Inteligência', 'Gênios das Finanças'],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAviWxOHA6-TSRsc9nowgZ94nT6rMAPEPwbq45YXwrQO3tgpp7svH9l3AML7bIp-kLC1Mbwcxghd4NKyD-PFP-Zq6IrKRZiQK7_c6Q7LzwoYaa6r4DtXOf32iEzIX21HWbh9Cqom9uud288CQwFXwEGcHNGkUTgphAAAR7VhhWgr_di-9_4Q74vvTKmdmDr8p4jYOHOEsrQA1R-6g4yioN4d6CxkRElJbHE31jZEGS6Yy4dRVDw85C',
+  },
+  {
+    title: 'Ensino Fundamental II', subtitle: 'Autonomia com acompanhamento',
+    text: 'Novos desafios acadêmicos encontram uma rotina estruturada, capaz de desenvolver responsabilidade e pensamento crítico.',
+    items: ['Formação acadêmica consistente', 'Inteligência emocional e saúde mental', 'Educação financeira prática'],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5JjoMj35rW5hQDgX0yALQzr4jRb8fF2nZV7KNi4CcxvdtkgWYwN3-5CEYydtJiINLv8AvAFa44d1WVIXWySMxVEzwbDl8FyBWtGiwkUxdPUyfktrg-OmXXWn1urwGxDYxkPGL3Z99zJLryNqAtnMiiXWASZJizaIZOOZ9JtVsF7t4-QQaZzIAa9lXYLKCh_mqq9Y9KtCBO6pp4LblPF-dZsS1An24yg4C1alFuLIfiOOOnw01Mo5g',
+  },
+  {
+    title: 'Ensino Médio', subtitle: 'Escolhas conscientes para o futuro',
+    text: 'Preparação acadêmica de alta performance sem perder de vista o projeto de vida e a singularidade de cada estudante.',
+    items: ['Simulados ENEM e vestibulares', 'Orientação de escolha profissional', 'Acompanhamento individual da jornada'],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB-Txd4nt9_M1vUBxVgQILZFMTEYRHUkroj0cvwWzZg2hsCR2kqJmE3z_9pQHJn1MMZYNYIa3LqAizQX89nN_Cb_Q6HY_pFNvxz8LXzh_wSpXd_pyEtdLB4pKJKzxiT-BZv2xNK4EoXmsAqrFSuwGmHCKcSEJEQatALiDTdw1iTIz1ExKei5C_EeUcjjgxSJ2l45TMH1_Fcu6rF7Z24wm0Bv1g0PpnkoLWM85udIQFIvhVgjc2SWDAn',
+  },
+];
+---
+
+<BaseLayout title="Segmentos | Colégio JJR" description="Educação Infantil, Ensino Fundamental I e II e Ensino Médio com formação integral e acompanhamento próximo.">
+  <header class="page-hero"><div class="shell"><span class="eyebrow">Uma jornada completa</span><h1>Cada fase pede um jeito de ensinar.</h1><p>Do primeiro passo à escolha da profissão, respeitamos o ritmo e as potencialidades de cada etapa.</p></div></header>
+  <section class="section-tight"><div class="shell segment-list">
+    {segments.map((segment) => (
+      <article class="segment">
+        <div class="segment-image" style={`background-image:url('${segment.image}')`} role="img" aria-label={`Estudantes do segmento ${segment.title}`}></div>
+        <div class="segment-copy"><span class="eyebrow">{segment.subtitle}</span><h2>{segment.title}</h2><p>{segment.text}</p><ul>{segment.items.map((item) => <li>{item}</li>)}</ul>{segment.external && <a class="text-link" href="https://opequenogalileu.com.br" rel="nofollow noopener noreferrer" target="_blank">Conheça O Pequeno Galileu</a>}</div>
+      </article>
+    ))}
+  </div></section>
+</BaseLayout>

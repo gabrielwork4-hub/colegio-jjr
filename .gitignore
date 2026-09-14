@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+npm-debug.log*
+
+# Materiais locais de referência e planejamento (não fazem parte da publicação)
+/Documento sem título.docx
+/benchmark-clusters-plano-6-meses-jjr.md
+/briefing-seo-geo-colegio-jjr.md
+/estrutura-implementacao-jjr.md
+/images.jfif
+/jjr-colegio-jean-jacques-rousseau.webp
+/outputs/

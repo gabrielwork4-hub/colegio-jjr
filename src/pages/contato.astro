@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contato e visita | Colégio JJR" description="Agende uma visita ao Colégio JJR em Rio Pequeno, São Paulo, ou fale conosco por telefone e WhatsApp." pageType="ContactPage">
+  <header class="page-hero"><div class="shell"><span class="eyebrow">Vamos conversar</span><h1>Venha sentir a escola de perto.</h1><p>Conheça a proposta pedagógica, caminhe pelos espaços e tire suas dúvidas com a nossa equipe.</p></div></header>
+  <section class="section-tight"><div class="shell contact-grid">
+    <div>
+      <h2>Você escolhe o canal.</h2>
+      <p>Estamos no Rio Pequeno, em São Paulo. O atendimento acompanha os horários da escola.</p>
+      <div class="contact-list">
+        <a class="contact-item" href="tel:+551137144206"><strong>Telefone</strong><br />(11) 3714-4206</a>
+        <a class="contact-item" href="https://wa.me/5511957353241" target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong><br />(11) 95735-3241</a>
+        <a class="contact-item" href="mailto:colegiojeanjr@yahoo.com.br"><strong>E-mail</strong><br />colegiojeanjr@yahoo.com.br</a>
+        <a class="contact-item" href="https://maps.google.com/?q=Rua+Professor+Gilio+Sattin+200+São+Paulo" target="_blank" rel="noopener noreferrer"><strong>Endereço</strong><br />Rua Professor Gilio Sattin, 200/210 — Rio Pequeno</a>
+      </div>
+    </div>
+    <form id="visita" class="form-card" name="visita" method="post" data-netlify="true">
+      <input type="hidden" name="form-name" value="visita" />
+      <h2>Agende uma visita</h2>
+      <p>Preencha seus dados. A equipe entrará em contato para combinar o melhor dia e horário.</p>
+      <div class="field"><label for="nome">Nome do responsável</label><input id="nome" name="nome" autocomplete="name" required /></div>
+      <div class="field-grid">
+        <div class="field"><label for="telefone">Telefone</label><input id="telefone" name="telefone" type="tel" autocomplete="tel" required /></div>
+        <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+      </div>
+      <div class="field"><label for="segmento">Segmento de interesse</label><select id="segmento" name="segmento" required><option value="">Selecione</option><option>Educação Infantil</option><option>Ensino Fundamental I</option><option>Ensino Fundamental II</option><option>Ensino Médio</option></select></div>
+      <div class="field"><label for="mensagem">Como podemos ajudar?</label><textarea id="mensagem" name="mensagem"></textarea></div>
+      <button class="button button-navy" type="submit">Solicitar agendamento</button>
+    </form>
+  </div></section>
+</BaseLayout>

@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const reasons = [
+  ['Formação por princípios', 'Caráter, responsabilidade e propósito integrados à vida escolar.'],
+  ['Acompanhamento próximo', 'Cada estudante é visto como indivíduo único em sua jornada.'],
+  ['Inteligência emocional', 'Autogoverno, convivência e saúde emocional trabalhados no cotidiano.'],
+  ['Futuro em perspectiva', 'Conhecimento, educação financeira, inovação e projeto de vida.'],
+];
+
+const faqs = [
+  ['Quais segmentos terão matrículas para 2027?', 'O atendimento contempla Educação Infantil, Ensino Fundamental I, Ensino Fundamental II e Ensino Médio. A disponibilidade de vagas é confirmada pela equipe para cada turma.'],
+  ['O colégio oferece período integral?', 'Sim. O Colégio JJR trabalha com turnos da manhã e da tarde e também com período integral, conforme o segmento e a disponibilidade.'],
+  ['Enviar o formulário garante uma vaga?', 'Não. O formulário inicia o contato com a equipe. A matrícula depende da disponibilidade da turma e da conclusão das etapas orientadas pela escola.'],
+  ['Posso visitar a escola antes de decidir?', 'Sim. A visita é a melhor maneira de conhecer a proposta pedagógica, os ambientes e esclarecer dúvidas diretamente com a equipe.'],
+];
+---
+
+<BaseLayout title="Matrículas 2027 | Colégio JJR" description="Cadastre seu interesse nas matrículas 2027 do Colégio JJR e agende uma visita para conhecer nossa proposta pedagógica.">
+  <header class="enrollment-hero">
+    <div class="shell enrollment-hero-grid">
+      <div>
+        <span class="enrollment-label">Matrículas 2027</span>
+        <h1>Uma escolha que acompanha seu filho por inteiro.</h1>
+        <p>Do Infantil ao Ensino Médio, o JJR une formação acadêmica, inteligência emocional e princípios em uma escola próxima das famílias.</p>
+        <div class="hero-actions">
+          <a class="button button-lime" href="#interesse">Cadastre seu interesse</a>
+          <a class="button campaign-ghost" href="https://wa.me/5511957353241?text=Olá%2C%20gostaria%20de%20informações%20sobre%20as%20matrículas%202027." target="_blank" rel="noopener noreferrer">Fale com a escola</a>
+        </div>
+      </div>
+      <div class="year-poster" aria-label="Matrículas para o ano letivo de 2027">
+        <span>ANO LETIVO</span>
+        <strong>20<br />27</strong>
+        <small>Conheça. Converse. Escolha com segurança.</small>
+      </div>
+    </div>
+  </header>
+
+  <section class="enrollment-facts" aria-label="Segmentos e turnos">
+    <div class="shell enrollment-facts-grid">
+      <div><strong>4 segmentos</strong><span>do Infantil ao Ensino Médio</span></div>
+      <div><strong>3 turnos</strong><span>manhã, tarde e integral</span></div>
+      <div><strong>Rio Pequeno</strong><span>São Paulo, SP</span></div>
+    </div>
+  </section>
+
+  <section class="section surface">
+    <div class="shell">
+      <header class="center-heading"><span class="eyebrow">O primeiro passo</span><h2>Um processo próximo desde o início</h2><p>Sem pressa artificial: informação clara para a família tomar uma decisão segura.</p></header>
+      <ol class="admission-steps">
+        <li><span>1</span><div><h3>Conte o que você procura</h3><p>Informe o segmento, a série pretendida e a melhor forma de contato.</p></div></li>
+        <li><span>2</span><div><h3>Conheça a escola</h3><p>Agende uma visita para conversar sobre a proposta e percorrer os ambientes.</p></div></li>
+        <li><span>3</span><div><h3>Receba as orientações</h3><p>A equipe confirma a disponibilidade e apresenta os próximos passos da matrícula.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section enrollment-reasons">
+    <div class="shell reasons-grid">
+      <div class="reasons-intro"><span class="eyebrow">Por que o JJR</span><h2>Conhecimento com fundamento.</h2><p>Uma formação que prepara para provas, decisões, relações e responsabilidades da vida real.</p></div>
+      <div class="reason-list">{reasons.map(([title, text]) => <article><h3>{title}</h3><p>{text}</p></article>)}</div>
+    </div>
+  </section>
+
+  <section class="section surface">
+    <div class="shell faq-grid">
+      <div><span class="eyebrow">Perguntas frequentes</span><h2>Para decidir com clareza.</h2></div>
+      <div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div>
+    </div>
+  </section>
+
+  <section id="interesse" class="section enrollment-form-section">
+    <div class="shell enrollment-form-grid">
+      <div>
+        <span class="dark-chip">Interesse em 2027</span>
+        <h2>Vamos conversar sobre a próxima etapa?</h2>
+        <p>Preencha os dados essenciais. A equipe do JJR entrará em contato para orientar sua família.</p>
+        <p class="form-assurance">Este cadastro não confirma nem reserva uma vaga.</p>
+      </div>
+      <form class="form-card" name="matriculas-2027" method="post" data-netlify="true">
+        <input type="hidden" name="form-name" value="matriculas-2027" />
+        <div class="field"><label for="responsavel">Nome do responsável</label><input id="responsavel" name="responsavel" autocomplete="name" required /></div>
+        <div class="field-grid">
+          <div class="field"><label for="telefone-2027">WhatsApp</label><input id="telefone-2027" name="telefone" type="tel" autocomplete="tel" required /></div>
+          <div class="field"><label for="email-2027">E-mail</label><input id="email-2027" name="email" type="email" autocomplete="email" required /></div>
+        </div>
+        <div class="field"><label for="aluno">Nome do estudante</label><input id="aluno" name="aluno" required /></div>
+        <div class="field-grid">
+          <div class="field"><label for="segmento-2027">Segmento</label><select id="segmento-2027" name="segmento" required><option value="">Selecione</option><option>Educação Infantil</option><option>Ensino Fundamental I</option><option>Ensino Fundamental II</option><option>Ensino Médio</option></select></div>
+          <div class="field"><label for="serie">Série pretendida</label><input id="serie" name="serie" required /></div>
+        </div>
+        <button class="button button-navy" type="submit">Quero receber informações</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

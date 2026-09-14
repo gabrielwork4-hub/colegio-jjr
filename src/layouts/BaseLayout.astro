@@ -1,0 +1,152 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  pageType?: 'WebPage' | 'ContactPage' | 'CollectionPage';
+  contentType?: 'website' | 'article';
+  publishedAt?: Date | string;
+  modifiedAt?: Date | string;
+  author?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDiB0uotSzNhEwn_btRBWht38LzSrPWv9-NsHsWDCVAAEfqVqIxerN7tJBEyw7qYhYgKH0Sn2bY--qLoF3cVacLZd3fi3dDytBcMfpFesqxKmJI83PID9PUEsYy4GxT8xvqObChG4LD6hir4xlcaHfuMmGUUH-gRqzXDTsTBxUJKFWxN8h-nTHIfpdJCBH11ILpcyY7qKgBbWozD9tf15IVSjzbgCiCrPJOy0pStlBhPdjZMeQPMRW',
+  pageType = 'WebPage',
+  contentType = 'website',
+  publishedAt,
+  modifiedAt,
+  author,
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://colegiojjr.com.br');
+const canonical = new URL(Astro.url.pathname, siteUrl);
+const absoluteImage = new URL(image, siteUrl);
+const pageName = title.replace(/\s*\|\s*Colégio JJR.*$/u, '');
+const pathname = Astro.url.pathname;
+const labels: Record<string, string> = {
+  blog: 'Por dentro do JJR',
+  contato: 'Contato',
+  estrutura: 'Estrutura',
+  'matriculas-2027': 'Matrículas 2027',
+  segmentos: 'Segmentos',
+};
+const segments = pathname.split('/').filter(Boolean);
+const breadcrumbItems = [
+  { '@type': 'ListItem', position: 1, name: 'Início', item: new URL('/', siteUrl).href },
+  ...segments.map((segment, index) => ({
+    '@type': 'ListItem',
+    position: index + 2,
+    name: index === segments.length - 1 ? pageName : (labels[segment] ?? segment.replaceAll('-', ' ')),
+    item: new URL(`/${segments.slice(0, index + 1).join('/')}/`, siteUrl).href,
+  })),
+];
+
+const schoolId = new URL('/#school', siteUrl).href;
+const websiteId = new URL('/#website', siteUrl).href;
+const webpageId = `${canonical.href}#webpage`;
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': ['Organization', 'School'],
+    '@id': schoolId,
+    name: 'Colégio Jean Jacques Rousseau',
+    alternateName: 'Colégio JJR',
+    url: new URL('/', siteUrl).href,
+    taxID: '08.977.830/0001-08',
+    telephone: '+55 11 3714-4206',
+    email: 'colegiojeanjr@yahoo.com.br',
+    sameAs: ['https://www.instagram.com/colegiojjr/'],
+  },
+  {
+    '@type': 'WebSite',
+    '@id': websiteId,
+    url: new URL('/', siteUrl).href,
+    name: 'Colégio JJR',
+    inLanguage: 'pt-BR',
+    publisher: { '@id': schoolId },
+  },
+  {
+    '@type': pageType,
+    '@id': webpageId,
+    url: canonical.href,
+    name: pageName,
+    description,
+    inLanguage: 'pt-BR',
+    isPartOf: { '@id': websiteId },
+    about: { '@id': schoolId },
+    primaryImageOfPage: { '@type': 'ImageObject', url: absoluteImage.href },
+    breadcrumb: { '@id': `${canonical.href}#breadcrumb` },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${canonical.href}#breadcrumb`,
+    itemListElement: breadcrumbItems,
+  },
+];
+
+if (contentType === 'article' && publishedAt) {
+  graph.push({
+    '@type': 'BlogPosting',
+    '@id': `${canonical.href}#article`,
+    headline: pageName,
+    description,
+    image: absoluteImage.href,
+    datePublished: new Date(publishedAt).toISOString(),
+    dateModified: new Date(modifiedAt ?? publishedAt).toISOString(),
+    inLanguage: 'pt-BR',
+    author: { '@type': 'Organization', name: author ?? 'Coordenação Pedagógica do Colégio JJR' },
+    publisher: { '@id': schoolId },
+    mainEntityOfPage: { '@id': webpageId },
+  });
+}
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': graph,
+});
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <meta property="og:type" content={contentType} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Colégio JJR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={absoluteImage} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteImage} />
+    <script type="application/ld+json" is:inline set:html={structuredData} />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <Header />
+    <main id="conteudo"><slot /></main>
+    <Footer />
+    <WhatsAppButton />
+  </body>
+</html>
