@@ -1,17 +1,19 @@
 ---
+import { internalPath } from '../utils/site';
+
 const pathname = Astro.url.pathname;
 const links = [
-  { href: '/', label: 'Início' },
-  { href: '/segmentos', label: 'Segmentos' },
-  { href: '/estrutura', label: 'Estrutura' },
-  { href: '/blog', label: 'Por dentro do JJR' },
-  { href: '/contato', label: 'Contato' },
+  { href: internalPath('/'), label: 'Início' },
+  { href: internalPath('/segmentos'), label: 'Segmentos' },
+  { href: internalPath('/estrutura'), label: 'Estrutura' },
+  { href: internalPath('/blog'), label: 'Por dentro do JJR' },
+  { href: internalPath('/contato'), label: 'Contato' },
 ];
 ---
 
 <header class="site-header">
   <div class="header-inner shell">
-    <a class="brand" href="/" aria-label="Colégio JJR — página inicial">
+    <a class="brand" href={internalPath('/')} aria-label="Colégio JJR — página inicial">
       <span class="brand-mark" aria-hidden="true">J</span>
       <span><strong>Colégio JJR</strong><small>Educação por princípios</small></span>
     </a>
@@ -20,14 +22,14 @@ const links = [
         <a href={link.href} aria-current={pathname === link.href ? 'page' : undefined}>{link.label}</a>
       ))}
     </nav>
-    <a class="button button-lime header-cta" href="/matriculas-2027">Matrículas 2027</a>
+    <a class="button button-lime header-cta" href={internalPath('/matriculas-2027')}>Matrículas 2027</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <nav id="mobile-menu" class="mobile-nav" aria-label="Navegação móvel" hidden>
     {links.map((link) => <a href={link.href}>{link.label}</a>)}
-    <a class="button button-lime" href="/matriculas-2027">Matrículas 2027</a>
+    <a class="button button-lime" href={internalPath('/matriculas-2027')}>Matrículas 2027</a>
   </nav>
 </header>
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { internalPath } from '../utils/site';
 import IconBadge from '../components/IconBadge.astro';
 
 const heroImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAviWxOHA6-TSRsc9nowgZ94nT6rMAPEPwbq45YXwrQO3tgpp7svH9l3AML7bIp-kLC1Mbwcxghd4NKyD-PFP-Zq6IrKRZiQK7_c6Q7LzwoYaa6r4DtXOf32iEzIX21HWbh9Cqom9uud288CQwFXwEGcHNGkUTgphAAAR7VhhWgr_di-9_4Q74vvTKmdmDr8p4jYOHOEsrQA1R-6g4yioN4d6CxkRElJbHE31jZEGS6Yy4dRVDw85C';
@@ -19,7 +20,7 @@ const segments = [
         <h1 class="hero-arrival" style="--arrival-delay: 120ms">Escola que forma caráter sólido e gente de valor.</h1>
         <p class="hero-arrival" style="--arrival-delay: 220ms">Do Infantil ao Ensino Médio. Formação integral, inteligência emocional e valores que preparam para a vida.</p>
         <div class="hero-actions hero-arrival" style="--arrival-delay: 320ms">
-          <a class="button button-lime" href="/contato#visita">Visite nossa escola</a>
+          <a class="button button-lime" href={internalPath('/contato#visita')}>Visite nossa escola</a>
           <a class="button button-ghost" href="https://wa.me/5511957353241" rel="noopener noreferrer" target="_blank">Fale no WhatsApp</a>
         </div>
       </div>
@@ -87,11 +88,11 @@ const segments = [
             <small>{segment.years}</small>
             <h3>{segment.title}</h3>
             <p>{segment.text}</p>
-            <a href="/segmentos">Conheça o segmento</a>
+            <a href={internalPath('/segmentos')}>Conheça o segmento</a>
           </article>
         ))}
       </div>
-      <div class="center-action"><a class="button button-ghost" href="/segmentos">Ver todos os segmentos</a></div>
+      <div class="center-action"><a class="button button-ghost" href={internalPath('/segmentos')}>Ver todos os segmentos</a></div>
     </div>
   </section>
 
@@ -103,8 +104,8 @@ const segments = [
         <h2>O próximo ano começa com uma boa escolha.</h2>
         <p>Conheça uma escola que acompanha cada estudante de perto e une formação acadêmica, inteligência emocional e princípios.</p>
         <div class="hero-actions">
-          <a class="button button-lime" href="/matriculas-2027">Conheça o processo</a>
-          <a class="button campaign-ghost" href="/contato#visita">Agende uma visita</a>
+          <a class="button button-lime" href={internalPath('/matriculas-2027')}>Conheça o processo</a>
+          <a class="button campaign-ghost" href={internalPath('/contato#visita')}>Agende uma visita</a>
         </div>
       </div>
     </div>
@@ -116,7 +117,7 @@ const segments = [
         <span class="dark-chip">Tradição e inovação</span>
         <h2>Valores no coração.<br />Futuro no horizonte.</h2>
         <p>Não escolhemos entre princípios e inovação: formamos estudantes íntegros e preparados para o mundo complexo de hoje.</p>
-        <a class="button button-lime" href="/segmentos">Conheça nossa proposta</a>
+        <a class="button button-lime" href={internalPath('/segmentos')}>Conheça nossa proposta</a>
       </div>
       <div class="legacy-story">
         <div class="history-line">
@@ -139,13 +140,13 @@ const segments = [
         <IconBadge name="home" />
         <h2>Uma extensão do lar</h2>
         <p>Proximidade, diálogo e atenção individual criam um ambiente seguro para aprender. Escola e família caminham juntas durante toda a formação.</p>
-        <a class="text-link" href="/blog">Veja o cotidiano do JJR</a>
+        <a class="text-link" href={internalPath('/blog')}>Veja o cotidiano do JJR</a>
       </article>
       <article class="visit-card">
         <h2>Venha conhecer o JJR de perto</h2>
         <p>Agende uma visita e sinta a energia do dia a dia da nossa escola.</p>
         <div class="hero-actions">
-          <a class="button button-navy" href="/contato#visita">Agendar visita</a>
+          <a class="button button-navy" href={internalPath('/contato#visita')}>Agendar visita</a>
           <a class="button button-ghost" href="https://wa.me/5511957353241" rel="noopener noreferrer" target="_blank">Falar no WhatsApp</a>
         </div>
       </article>

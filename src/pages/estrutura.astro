@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { internalPath } from '../utils/site';
 
 const spaces = [
   ['Salas de aula', 'Espaços amplos, confortáveis e com tecnologia de apoio.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDiB0uotSzNhEwn_btRBWht38LzSrPWv9-NsHsWDCVAAEfqVqIxerN7tJBEyw7qYhYgKH0Sn2bY--qLoF3cVacLZd3fi3dDytBcMfpFesqxKmJI83PID9PUEsYy4GxT8xvqObChG4LD6hir4xlcaHfuMmGUUH-gRqzXDTsTBxUJKFWxN8h-nTHIfpdJCBH11ILpcyY7qKgBbWozD9tf15IVSjzbgCiCrPJOy0pStlBhPdjZMeQPMRW'],
@@ -18,5 +19,5 @@ const spaces = [
       <article class="gallery-card"><img src={image} alt={title} loading="lazy" /><div class="gallery-copy"><h2>{title}</h2><p>{text}</p></div></article>
     ))}
   </div></section>
-  <section class="section navy"><div class="shell quote"><p>O melhor jeito de conhecer a nossa escola é caminhar por ela.</p><div style="margin-top:2rem"><a class="button button-lime" href="/contato#visita">Agende sua visita</a></div></div></section>
+  <section class="section navy"><div class="shell quote"><p>O melhor jeito de conhecer a nossa escola é caminhar por ela.</p><div style="margin-top:2rem"><a class="button button-lime" href={internalPath('/contato#visita')}>Agende sua visita</a></div></div></section>
 </BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { internalPath } from '../utils/site';
 ---
 
 <BaseLayout
@@ -13,8 +14,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1>Essa página não está por aqui.</h1>
       <p>O endereço pode ter mudado ou não existir mais. Você pode voltar ao início ou conhecer os principais caminhos do Colégio JJR.</p>
       <div class="hero-actions">
-        <a class="button button-lime" href="/">Voltar ao início</a>
-        <a class="button button-navy" href="/segmentos/">Conhecer os segmentos</a>
+        <a class="button button-lime" href={internalPath('/')}>Voltar ao início</a>
+        <a class="button button-navy" href={internalPath('/segmentos/')}>Conhecer os segmentos</a>
       </div>
     </div>
   </section>

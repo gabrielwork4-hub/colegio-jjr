@@ -1,8 +1,11 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
+const githubPages = process.env.DEPLOY_TARGET === 'github-pages';
+
 export default defineConfig({
-  site: 'https://colegiojjr.com.br',
+  site: githubPages ? 'https://gabrielwork4-hub.github.io' : 'https://colegiojjr.com.br',
+  base: githubPages ? '/colegio-jjr' : undefined,
   output: 'static',
   trailingSlash: 'always',
   integrations: [
