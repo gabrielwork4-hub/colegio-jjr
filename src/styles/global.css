@@ -59,6 +59,7 @@ button, input, textarea { font: inherit; }
 .menu-toggle span { display: block; height: 2px; margin: 5px 0; background: var(--navy); }
 .mobile-nav { padding: 1rem 20px 1.5rem; border-top: 1px solid var(--line); background: var(--paper); }
 .mobile-nav > a:not(.button) { display: block; padding: .8rem 0; color: var(--navy); font-weight: 700; }
+.mobile-nav > a[aria-current='page'] { color: var(--lime-ink); box-shadow: inset 3px 0 var(--lime-ink); padding-left: .75rem; }
 
 .hero { min-height: calc(100svh - 78px); display: grid; align-items: center; overflow: hidden; position: relative; }
 .hero::before { content: ''; position: absolute; width: 32rem; height: 32rem; right: -14rem; top: -12rem; border-radius: 42% 58% 70% 30% / 30% 40% 60% 70%; background: var(--lime); opacity: .38; }

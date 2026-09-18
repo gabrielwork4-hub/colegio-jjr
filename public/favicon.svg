@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Colégio JJR">
+  <title>Colégio JJR</title>
+  <path
+    d="M22.86 0H50.29A13.71 13.71 0 0 1 64 13.71V41.14A22.86 22.86 0 0 1 41.14 64H13.71A13.71 13.71 0 0 1 0 50.29V22.86A22.86 22.86 0 0 1 22.86 0Z"
+    fill="#061637"
+  />
+  <path
+    d="M43 16V37A11 11 0 0 1 21 37"
+    fill="none"
+    stroke="#bdf464"
+    stroke-width="9"
+    stroke-linecap="round"
+  />
+</svg>

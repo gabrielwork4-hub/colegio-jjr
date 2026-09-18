@@ -15,6 +15,7 @@ interface Props {
   modifiedAt?: Date | string;
   author?: string;
   noindex?: boolean;
+  faqs?: readonly (readonly [string, string])[];
 }
 
 const {
@@ -27,6 +28,7 @@ const {
   modifiedAt,
   author,
   noindex = false,
+  faqs,
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL('https://colegiojjr.com.br');
@@ -65,6 +67,14 @@ const graph: Record<string, unknown>[] = [
     taxID: '08.977.830/0001-08',
     telephone: '+55 11 3714-4206',
     email: 'colegiojeanjr@yahoo.com.br',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rua Professor Gilio Sattin, 200/210 — Rio Pequeno',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      postalCode: '05359-090',
+      addressCountry: 'BR',
+    },
     sameAs: ['https://www.instagram.com/colegiojjr/'],
   },
   {
@@ -93,6 +103,20 @@ const graph: Record<string, unknown>[] = [
     itemListElement: breadcrumbItems,
   },
 ];
+
+if (faqs?.length) {
+  graph.push({
+    '@type': 'FAQPage',
+    '@id': `${canonical.href}#faq`,
+    inLanguage: 'pt-BR',
+    isPartOf: { '@id': webpageId },
+    mainEntity: faqs.map(([question, answer]) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  });
+}
 
 if (contentType === 'article' && publishedAt) {
   graph.push({
@@ -125,6 +149,10 @@ const structuredData = JSON.stringify({
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" href={internalPath('/favicon.svg')} type="image/svg+xml" />
+    <link rel="icon" href={internalPath('/favicon-32.png')} type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href={internalPath('/apple-touch-icon.png')} />
+    <meta name="theme-color" content="#061637" />
     <link rel="sitemap" href={internalPath('/sitemap-index.xml')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
