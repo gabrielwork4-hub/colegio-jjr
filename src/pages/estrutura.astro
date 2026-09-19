@@ -7,8 +7,8 @@ const spaces = [
   ['Laboratório de Ciências', 'Práticas de biologia, física e química em ambiente preparado.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBOP__mSHj4XqRozQed8jOFGrG_k7D0hfXW_FPeDyZAWk-GBCX1OyCygv7CqZ7EiyfywFk1kt5m4hgvlNBTZKnXu87MybagsxAk42eJjSIj-E0mJN1QvzRML0a1f-BZTdJNe7SddJXff5NyeOI4ApAhUK5d8sziBRg0s00nA3SpHU_MNKnUM8ifY0hnb--cLGHiPqhnpjp5Hy58hkeaB_529I4ZM7fsCm7NkZ0ersbEgMdOJ2T4w5aQ', 'Laboratório de ciências do Colégio JJR equipado com bancadas e vidraria para aulas práticas'],
   ['Espaço Maker', 'Robótica, criatividade mão na massa e desenvolvimento de projetos.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcZBeMEOyylx0YurMKPK3krsmfm-P3h_P-TL81qsrQLlXR7Z3GEvOfmqe5OjrgFR1aAzwLFxnXHYF7qwOr-zcsAzECu64-pixxhBDi3MLfDns8D6pLrqWh4NW-0OseYtexIUjB1djdO37E5066UswnlOlkN6XCCHe2NmGke4ZwdNf56Ln6qqpETlN8bdTAK6s3HsgawuXdu5ahfMHDBg4kG2IvIMe8Uj5WxGqmW4d_JdtGA_xDn9ae', 'Espaço maker do Colégio JJR com estudantes montando projetos de robótica sobre a bancada'],
   ['Biblioteca Hub', 'Acervo multidisciplinar e áreas imersivas de estudo e leitura.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuC44jUKdnqCmbtlULJePGh5SAqAN0w0qAlM7BhCIhN5M74bQIMXBDzkmJMBnp1vgWAHUAiMdOpnEyugu7Ntmk9G5Pp6wT_puQrDFhprpnbEenr36kYtsYtpMXG4qcdpqZk3miV11arYS6LlJBm8D1kC4Wk9HTgQB2m9Bv5AdU8zLbzafYF6Vm5VN9pWNAVCuLR0Ny24zgxL19LWP-Yeo2JA5WovdzzAOAWoRed8VuHowJLN1QuIlmFr', 'Biblioteca do Colégio JJR com estantes de acervo variado e mesas para leitura e estudo'],
-  ['Complexo esportivo', 'Esporte, cooperação e saúde em espaços seguros.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCHcf0XC00sML9gn47VztrRHmNKVfL07yxlhLPYiIJnipemJLuv8zSNdUiF4ndEv6M_pGqpiqcIzdfN5mJmPT_zDSiimz0K5PHX0F0saKl_FSVLf-N7bs9H2g1IKJwE0s1imUN_hjb89ywgRE9v_7yUfdRIlMVydHtvNMJjb29cggUIHRY8BI6N3L16dMVFaUGgVmqVwsxWs3E4qnRoflTJlYKllWmR7yKXpAsMOW1hpWF3cgwiza1F', 'Quadra do complexo esportivo do Colégio JJR usada em aulas de educação física e atividades coletivas'],
-  ['Pátio e convivência', 'Socialização segura e momentos recreativos ao longo do dia.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6EAn2lb8r-NpOP-sp8QPudcpBCzFoVxKFRsKo9ijUN-32Q7fuJ-wbGAkpsW4N63i9XGDMTZqSkVUodsufM6AD5YMnl0Z2H27zD1gn-crKYZK7dbr8qIeIzvdtYFvPHK-RzovEeGIhDbnKx6T353bBQSs47iAE7ubJ2CN3JiszOC0T793St-6sPzPTe46kH0Nukn6_XIoJykn8MtXVtNiBJt3lm6MkapvG4JIMeTIGj_ILFeQSN7Tt', 'Pátio de convivência do Colégio JJR onde os estudantes se reúnem nos intervalos'],
+  ['Complexo esportivo', 'Esporte, cooperação e saúde em espaços seguros.', '/fotos/quadra.webp', 'Quadra poliesportiva coberta do Colégio JJR, com traves, cesta de basquete e fechamento em tela'],
+  ['Pátio e convivência', 'Socialização segura e momentos recreativos ao longo do dia.', '/fotos/convivencia.webp', 'Área de convivência do Colégio JJR com mesas e cadeiras diante de painel decorado com o escudo da escola'],
 ];
 ---
 
@@ -16,7 +16,7 @@ const spaces = [
   <header class="page-hero"><div class="shell"><span class="eyebrow">Espaços que ensinam</span><h1>Estrutura para experimentar, criar e conviver.</h1><p>Cada ambiente participa da aprendizagem e foi pensado para acolher diferentes ritmos, atividades e descobertas.</p></div></header>
   <section class="section-tight"><div class="shell gallery">
     {spaces.map(([title, text, image, alt]) => (
-      <article class="gallery-card"><img src={image} alt={alt} loading="lazy" /><div class="gallery-copy"><h2>{title}</h2><p>{text}</p></div></article>
+      <article class="gallery-card"><img src={internalPath(image)} alt={alt} loading="lazy" /><div class="gallery-copy"><h2>{title}</h2><p>{text}</p></div></article>
     ))}
   </div></section>
   <section class="section navy"><div class="shell quote"><p>O melhor jeito de conhecer a nossa escola é caminhar por ela.</p><div style="margin-top:2rem"><a class="button button-lime" href={internalPath('/contato#visita')}>Agende sua visita</a></div></div></section>

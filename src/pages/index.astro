@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { internalPath } from '../utils/site';
 import IconBadge from '../components/IconBadge.astro';
 
-const heroImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAviWxOHA6-TSRsc9nowgZ94nT6rMAPEPwbq45YXwrQO3tgpp7svH9l3AML7bIp-kLC1Mbwcxghd4NKyD-PFP-Zq6IrKRZiQK7_c6Q7LzwoYaa6r4DtXOf32iEzIX21HWbh9Cqom9uud288CQwFXwEGcHNGkUTgphAAAR7VhhWgr_di-9_4Q74vvTKmdmDr8p4jYOHOEsrQA1R-6g4yioN4d6CxkRElJbHE31jZEGS6Yy4dRVDw85C';
+const heroImage = '/fotos/home-escada.webp';
 const segments = [
   { years: 'O Pequeno Galileu', title: 'Educação Infantil', text: 'Educação construtivista guiada por territórios de aprendizagem.' },
   { years: '1º ao 5º ano', title: 'Fundamental I', text: 'Alfabetização, letramento e projetos para aprender a aprender.' },
@@ -25,7 +25,7 @@ const segments = [
         </div>
       </div>
       <div class="structured-visual hero-arrival-visual">
-        <img src={heroImage} alt="Estudantes em atividade de aprendizagem colaborativa" fetchpriority="high" />
+        <img src={internalPath(heroImage)} alt="Escada do Colégio JJR com um valor escrito em cada degrau, de vitória a foco" width="1100" height="1220" fetchpriority="high" />
         <span class="enrollment-chip">Visitas abertas</span>
         <div class="history-card"><strong>26 anos</strong><span>de história do grupo</span><small>26 anos Galileu e 16 anos JJR no Rio Pequeno</small></div>
       </div>

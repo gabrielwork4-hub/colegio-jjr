@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { internalPath } from '../utils/site';
 
 const segments = [
   {
     title: 'Educação Infantil', subtitle: 'O Pequeno Galileu',
     text: 'Os primeiros anos ganham significado em territórios de aprendizagem que acolhem a curiosidade, o brincar e a descoberta.',
     items: ['Metodologia construtivista', '26 anos de experiência do grupo', 'Monitoramento por câmeras para os pais'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBtBdkZvANlq9HpZaMLUIy4L8kvSV20k-UOqW6gnb5baLcZU7hl_7rJy8p4ljpOtRbko9TbVKbGeM8lo-Wwo_5lzR4IGAma4RfTgl7YAgYoE6NmwdwUztbWWdYZetLe7Ms5wjEVcRldoCoOTjC7I0ef_h2rQ72kxh3ktL-EdvraW9i5TyXhwXfF1_GtCA8as9neAp4mHqMyDU7FUt9kDqSSDt1MSluUqGwkkUx0_w9SFkEQDRljgLEU',
+    imageAlt: 'Espaço da Educação Infantil do Colégio JJR com cadeiras em formato de mão e painel com o escudo da escola',
+    image: '/fotos/segmento-infantil.webp',
     external: true,
   },
   {
@@ -35,7 +37,7 @@ const segments = [
   <section class="section-tight"><div class="shell segment-list">
     {segments.map((segment) => (
       <article class="segment">
-        <div class="segment-image" style={`background-image:url('${segment.image}')`} role="img" aria-label={`Estudantes do segmento ${segment.title}`}></div>
+        <div class="segment-image" style={`background-image:url('${internalPath(segment.image)}')`} role="img" aria-label={segment.imageAlt ?? `Estudantes do segmento ${segment.title}`}></div>
         <div class="segment-copy"><span class="eyebrow">{segment.subtitle}</span><h2>{segment.title}</h2><p>{segment.text}</p><ul>{segment.items.map((item) => <li>{item}</li>)}</ul>{segment.external && <a class="text-link" href="https://opequenogalileu.com.br" rel="nofollow noopener noreferrer" target="_blank">Conheça O Pequeno Galileu</a>}</div>
       </article>
     ))}

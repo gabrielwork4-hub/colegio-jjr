@@ -9,6 +9,10 @@ const HAS_EXTENSION = /\.[a-z0-9]+$/i;
  * Arquivos (sitemap-index.xml, favicon.svg) ficam de fora da regra.
  */
 export function internalPath(path: string): string {
+  // Endereços externos passam intactos: as páginas misturam fotos do acervo
+  // com as imagens do protótipo que ainda não foram substituídas.
+  if (/^(https?:)?\/\//.test(path)) return path;
+
   const [pathname = '', suffix = ''] = splitSuffix(path);
   const clean = pathname.replace(/^\/+/, '');
   const needsSlash = clean !== '' && !clean.endsWith('/') && !HAS_EXTENSION.test(clean);
