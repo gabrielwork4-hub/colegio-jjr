@@ -1,6 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { assetPath } from '../../utils/site';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -16,12 +17,12 @@ const date = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', y
 <BaseLayout
   title={`${post.data.title} | Colégio JJR`}
   description={post.data.description}
-  image={post.data.image}
+  image={assetPath(post.data.image)}
   contentType="article"
   publishedAt={post.data.publishedAt}
   author={post.data.author}
 >
   <header class="page-hero"><div class="shell"><div class="post-meta"><span>{post.data.category}</span><time datetime={post.data.publishedAt.toISOString()}>{date}</time></div><h1>{post.data.title}</h1><p>{post.data.description}</p></div></header>
-  <img class="post-hero-image" src={post.data.image} alt={post.data.imageAlt} />
+  <img class="post-hero-image" src={assetPath(post.data.image)} alt={post.data.imageAlt} />
   <article class="prose"><Content /><p><em>{post.data.author}</em></p></article>
 </BaseLayout>
