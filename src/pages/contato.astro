@@ -6,6 +6,24 @@ import { internalPath } from '../utils/site';
 
 <BaseLayout title="Contato e visita | Colégio JJR" description="Agende uma visita ao Colégio JJR em Rio Pequeno, São Paulo, ou fale conosco por telefone e WhatsApp." pageType="ContactPage">
   <header class="page-hero"><div class="shell"><span class="eyebrow">Vamos conversar</span><h1>Venha sentir a escola de perto.</h1><p>Conheça a proposta pedagógica, caminhe pelos espaços e tire suas dúvidas com a nossa equipe.</p></div></header>
+  <section class="section-tight">
+    <div class="shell center-heading">
+      <span class="eyebrow">É aqui</span>
+      <h2>A escola fica na fachada azul da Gilio Sattin.</h2>
+      <p>{fullStreet}, {school.address.city}/{school.address.region} — CEP {school.address.postalCode}.</p>
+    </div>
+    <img
+      class="facade-image"
+      src={internalPath('/fotos/fachada.webp')}
+      alt={`Fachada azul do ${school.name} na ${school.address.street}, com o escudo da escola e os telefones pintados na parede`}
+      width="2240"
+      height="1100"
+      loading="lazy"
+    />
+    <div class="shell center-action">
+      <a class="button button-ghost" href={mapsQuery} target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
+    </div>
+  </section>
   <section class="section-tight"><div class="shell contact-grid">
     <div>
       <h2>Você escolhe o canal.</h2>
@@ -31,22 +49,4 @@ import { internalPath } from '../utils/site';
       <button class="button button-navy" type="submit">Solicitar agendamento</button>
     </form>
   </div></section>
-  <section class="section-tight surface">
-    <div class="shell center-heading">
-      <span class="eyebrow">É aqui</span>
-      <h2>Você reconhece pela fachada azul.</h2>
-      <p>{fullStreet}, {school.address.city}/{school.address.region} — CEP {school.address.postalCode}.</p>
-    </div>
-    <img
-      class="facade-image"
-      src={internalPath('/fotos/fachada.webp')}
-      alt={`Fachada azul do ${school.name} na ${school.address.street}, com o escudo da escola e os telefones pintados na parede`}
-      width="2240"
-      height="1100"
-      loading="lazy"
-    />
-    <div class="shell center-action">
-      <a class="button button-ghost" href={mapsQuery} target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
-    </div>
-  </section>
 </BaseLayout>
