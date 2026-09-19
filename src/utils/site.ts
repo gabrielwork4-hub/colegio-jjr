@@ -24,3 +24,8 @@ function splitSuffix(path: string): [string, string] {
   const index = path.search(/[?#]/);
   return index === -1 ? [path, ''] : [path.slice(0, index), path.slice(index)];
 }
+
+/** Resolve imagens locais (/images/...) respeitando o base path; URLs absolutas passam direto. */
+export function assetPath(src: string): string {
+  return /^https?:\/\//.test(src) ? src : internalPath(src);
+}
