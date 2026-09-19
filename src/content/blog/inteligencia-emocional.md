@@ -3,8 +3,8 @@ title: "Inteligência emocional se aprende no cotidiano"
 description: "Como situações comuns da vida escolar ajudam crianças e adolescentes a nomear emoções e fazer escolhas conscientes."
 publishedAt: 2026-08-05
 category: "Práticas Pedagógicas"
-image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC44jUKdnqCmbtlULJePGh5SAqAN0w0qAlM7BhCIhN5M74bQIMXBDzkmJMBnp1vgWAHUAiMdOpnEyugu7Ntmk9G5Pp6wT_puQrDFhprpnbEenr36kYtsYtpMXG4qcdpqZk3miV11arYS6LlJBm8D1kC4Wk9HTgQB2m9Bv5AdU8zLbzafYF6Vm5VN9pWNAVCuLR0Ny24zgxL19LWP-Yeo2JA5WovdzzAOAWoRed8VuHowJLN1QuIlmFr"
-imageAlt: "Estudantes em uma atividade de convivência e inteligência emocional no Colégio JJR"
+image: "/images/fotos/blog-inteligencia-emocional-alunas-convivencia.jpg"
+imageAlt: "Alunas do Colégio JJR conversando durante atividade de leitura em dupla"
 ---
 
 Autogoverno não significa esconder o que se sente. Significa reconhecer emoções, compreender suas causas e aprender a responder de forma responsável.
