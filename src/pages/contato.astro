@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { school, fullStreet, mapsQuery } from '../utils/school';
+import { internalPath } from '../utils/site';
 ---
 
 <BaseLayout title="Contato e visita | Colégio JJR" description="Agende uma visita ao Colégio JJR em Rio Pequeno, São Paulo, ou fale conosco por telefone e WhatsApp." pageType="ContactPage">
@@ -30,4 +31,22 @@ import { school, fullStreet, mapsQuery } from '../utils/school';
       <button class="button button-navy" type="submit">Solicitar agendamento</button>
     </form>
   </div></section>
+  <section class="section-tight surface">
+    <div class="shell center-heading">
+      <span class="eyebrow">É aqui</span>
+      <h2>Você reconhece pela fachada azul.</h2>
+      <p>{fullStreet}, {school.address.city}/{school.address.region} — CEP {school.address.postalCode}.</p>
+    </div>
+    <img
+      class="facade-image"
+      src={internalPath('/fotos/fachada.webp')}
+      alt={`Fachada azul do ${school.name} na ${school.address.street}, com o escudo da escola e os telefones pintados na parede`}
+      width="2240"
+      height="1100"
+      loading="lazy"
+    />
+    <div class="shell center-action">
+      <a class="button button-ghost" href={mapsQuery} target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
+    </div>
+  </section>
 </BaseLayout>
