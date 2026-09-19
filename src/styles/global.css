@@ -1,4 +1,9 @@
 :root {
+  /* Declara o esquema para o navegador não inverter o site por conta própria.
+     Sem isto, o modo escuro forçado transforma os cartões claros em pretos e
+     apaga o texto sobre o âmbar. */
+  color-scheme: light;
+
   --navy: #061637;
   --navy-2: #1d2b4d;
   --lime: #bdf464;
