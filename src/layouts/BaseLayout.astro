@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { internalPath } from '../utils/site';
+import { school, fullStreet } from '../utils/school';
 import '../styles/global.css';
 
 interface Props {
@@ -61,21 +62,30 @@ const graph: Record<string, unknown>[] = [
   {
     '@type': ['Organization', 'School'],
     '@id': schoolId,
-    name: 'Colégio Jean Jacques Rousseau',
-    alternateName: 'Colégio JJR',
+    name: school.name,
+    alternateName: school.shortName,
     url: new URL('/', siteUrl).href,
-    taxID: '08.977.830/0001-08',
-    telephone: '+55 11 3714-4206',
-    email: 'colegiojeanjr@yahoo.com.br',
+    logo: { '@type': 'ImageObject', url: new URL(internalPath('/logo-jjr-512.png'), siteUrl).href, width: 374, height: 480 },
+    image: new URL(internalPath('/logo-jjr-512.png'), siteUrl).href,
+    taxID: school.taxId,
+    telephone: school.phone.e164,
+    email: school.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Rua Professor Gilio Sattin, 200/210 — Rio Pequeno',
-      addressLocality: 'São Paulo',
-      addressRegion: 'SP',
-      postalCode: '05359-090',
-      addressCountry: 'BR',
+      streetAddress: fullStreet,
+      addressLocality: school.address.city,
+      addressRegion: school.address.region,
+      postalCode: school.address.postalCode,
+      addressCountry: school.address.country,
     },
-    sameAs: ['https://www.instagram.com/colegiojjr/'],
+    geo: { '@type': 'GeoCoordinates', latitude: school.geo.latitude, longitude: school.geo.longitude },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: school.officeHours.days.map((day) => `https://schema.org/${day}`),
+      opens: school.officeHours.opens,
+      closes: school.officeHours.closes,
+    },
+    sameAs: [school.instagram],
   },
   {
     '@type': 'WebSite',
@@ -149,8 +159,8 @@ const structuredData = JSON.stringify({
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href={internalPath('/favicon.svg')} type="image/svg+xml" />
     <link rel="icon" href={internalPath('/favicon-32.png')} type="image/png" sizes="32x32" />
+    <link rel="icon" href={internalPath('/favicon-16.png')} type="image/png" sizes="16x16" />
     <link rel="apple-touch-icon" href={internalPath('/apple-touch-icon.png')} />
     <meta name="theme-color" content="#061637" />
     <link rel="sitemap" href={internalPath('/sitemap-index.xml')} />

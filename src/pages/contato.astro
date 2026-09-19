@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { school, fullStreet, mapsQuery } from '../utils/school';
 ---
 
 <BaseLayout title="Contato e visita | Colégio JJR" description="Agende uma visita ao Colégio JJR em Rio Pequeno, São Paulo, ou fale conosco por telefone e WhatsApp." pageType="ContactPage">
@@ -7,12 +8,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section-tight"><div class="shell contact-grid">
     <div>
       <h2>Você escolhe o canal.</h2>
-      <p>Estamos no Rio Pequeno, em São Paulo. O atendimento acompanha os horários da escola.</p>
+      <p>Estamos no {school.address.district}, em {school.address.city}. A secretaria atende de segunda a sexta, das {school.officeHours.opens} às {school.officeHours.closes}.</p>
       <div class="contact-list">
-        <a class="contact-item" href="tel:+551137144206"><strong>Telefone</strong><br />(11) 3714-4206</a>
-        <a class="contact-item" href="https://wa.me/5511957353241" target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong><br />(11) 95735-3241</a>
-        <a class="contact-item" href="mailto:colegiojeanjr@yahoo.com.br"><strong>E-mail</strong><br />colegiojeanjr@yahoo.com.br</a>
-        <a class="contact-item" href="https://maps.google.com/?q=Rua+Professor+Gilio+Sattin+200+São+Paulo" target="_blank" rel="noopener noreferrer"><strong>Endereço</strong><br />Rua Professor Gilio Sattin, 200/210 — Rio Pequeno</a>
+        <a class="contact-item" href={school.phone.href}><strong>Telefone</strong><br />{school.phone.label}</a>
+        <a class="contact-item" href={school.whatsapp.href} target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong><br />{school.whatsapp.label}</a>
+        <a class="contact-item" href={`mailto:${school.email}`}><strong>E-mail</strong><br />{school.email}</a>
+        <a class="contact-item" href={mapsQuery} target="_blank" rel="noopener noreferrer"><strong>Endereço</strong><br />{fullStreet}</a>
       </div>
     </div>
     <form id="visita" class="form-card" name="visita" method="post" data-netlify="true">

@@ -1,5 +1,6 @@
 ---
 import { internalPath } from '../utils/site';
+import { school } from '../utils/school';
 
 const pathname = Astro.url.pathname;
 const home = internalPath('/');
@@ -17,9 +18,9 @@ const isCurrent = (href: string) => (href === home ? pathname === home : pathnam
 
 <header class="site-header">
   <div class="header-inner shell">
-    <a class="brand" href={internalPath('/')} aria-label="Colégio JJR — página inicial">
-      <span class="brand-mark" aria-hidden="true">J</span>
-      <span><strong>Colégio JJR</strong><small>Educação por princípios</small></span>
+    <a class="brand" href={internalPath('/')} aria-label={`${school.shortName} — página inicial`}>
+      <img class="brand-mark" src={internalPath('/logo-jjr.png')} alt="" width="33" height="42" />
+      <span><strong>{school.shortName}</strong><small>{school.tagline}</small></span>
     </a>
     <nav class="desktop-nav" aria-label="Navegação principal">
       {links.map((link) => (
