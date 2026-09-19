@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { whatsappLink } from '../utils/school';
 
 const reasons = [
   ['Formação por princípios', 'Caráter, responsabilidade e propósito integrados à vida escolar.'],
@@ -25,7 +26,7 @@ const faqs = [
         <p>Do Infantil ao Ensino Médio, o JJR une formação acadêmica, inteligência emocional e princípios em uma escola próxima das famílias.</p>
         <div class="hero-actions">
           <a class="button button-lime" href="#interesse">Cadastre seu interesse</a>
-          <a class="button campaign-ghost" href="https://wa.me/5511957353241?text=Olá%2C%20gostaria%20de%20informações%20sobre%20as%20matrículas%202027." target="_blank" rel="noopener noreferrer">Fale com a escola</a>
+          <a class="button campaign-ghost" href={whatsappLink('Olá! Gostaria de informações sobre as matrículas 2027.')} target="_blank" rel="noopener noreferrer">Fale com a escola</a>
         </div>
       </div>
       <div class="year-poster" aria-label="Matrículas para o ano letivo de 2027">

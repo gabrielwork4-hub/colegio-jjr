@@ -36,6 +36,16 @@ export const school = {
   officeHours: { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '07:00', closes: '18:00' },
 } as const;
 
+/**
+ * Link de WhatsApp com mensagem pronta.
+ *
+ * Sem o texto, a escola recebe "Olá" solto e não sabe de onde a pessoa veio
+ * nem o que ela quer. Com ele, a conversa já começa no assunto certo.
+ */
+export function whatsappLink(mensagem: string): string {
+  return `${school.whatsapp.href}?text=${encodeURIComponent(mensagem)}`;
+}
+
 export const fullStreet = `${school.address.street} — ${school.address.district}`;
 export const mapsQuery = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   `${school.name}, ${school.address.street}, ${school.address.district}, ${school.address.city} - ${school.address.region}`,
