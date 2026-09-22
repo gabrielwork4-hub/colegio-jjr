@@ -187,5 +187,22 @@ const structuredData = JSON.stringify({
     <main id="conteudo"><slot /></main>
     <Footer />
     <WhatsAppButton />
+    {pathname === '/' && (
+      <>
+        <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+        <script is:inline>
+          window.addEventListener('DOMContentLoaded', () => {
+            const identity = window.netlifyIdentity;
+            if (!identity) return;
+
+            identity.on('login', () => {
+              identity.close();
+              window.location.assign('/admin/');
+            });
+            identity.init();
+          });
+        </script>
+      </>
+    )}
   </body>
 </html>
