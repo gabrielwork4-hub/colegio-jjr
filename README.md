@@ -44,11 +44,19 @@ O painel do Decap CMS fica em `/admin/`. Para testar localmente, mantenha
 `npm run dev` aberto em um terminal e execute `npm run cms` em outro. Depois,
 acesse `http://127.0.0.1:4321/admin/`.
 
-Na publicação, o CMS será conectado a um repositório GitHub e a uma aplicação
-OAuth própria. Nenhuma credencial é armazenada neste projeto.
+Em produção, o painel usa o Git Gateway da Netlify. Para ativá-lo:
+
+1. Importe este repositório para um site Netlify.
+2. Em **Identity**, habilite o Identity e convide os editores autorizados.
+3. Em **Identity > Services**, habilite o Git Gateway e autorize o acesso ao
+   repositório GitHub.
+4. Faça login em `/admin/` com o convite recebido. Publicações aprovadas pelo
+   painel criam commits no branch `main` e acionam uma nova publicação do site.
+
+Nenhuma credencial é armazenada neste projeto.
 
 ## Observações de produção
 
 - As imagens atuais usam as referências do protótipo Stitch e devem ser substituídas pelo acervo definitivo do colégio.
-- O formulário está preparado para Netlify Forms. Em outra hospedagem, conecte-o ao serviço de formulários escolhido.
+- O formulário usa Netlify Forms e é detectado durante a primeira publicação na Netlify.
 - Atualize o domínio em `astro.config.mjs` antes da publicação, se necessário.

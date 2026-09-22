@@ -1,5 +1,5 @@
 ---
-const configUrl = '/admin/config.yml';
+const configUrl = import.meta.env.DEV ? '/admin/config.local.yml' : '/admin/config.yml';
 ---
 
 <!doctype html>
