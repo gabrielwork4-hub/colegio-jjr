@@ -114,6 +114,7 @@ button, input, textarea { font: inherit; }
 .segment { display: grid; grid-template-columns: .85fr 1.15fr; overflow: hidden; min-height: 400px; border-radius: 2.5rem; background: white; box-shadow: var(--shadow); }
 .segment:nth-child(even) .segment-image { order: 2; }
 .segment-image { min-height: 360px; background-size: cover; background-position: center; }
+.segment:last-child .segment-image { background-position: center top; }
 .segment-copy { padding: clamp(2rem, 6vw, 4rem); }
 .segment-copy ul { padding-left: 1.2rem; }
 .segment-copy li { margin-bottom: .6rem; }
