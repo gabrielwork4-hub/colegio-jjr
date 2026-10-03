@@ -8,7 +8,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     publishedAt: z.coerce.date(),
-    category: z.enum(['Eventos & Comunidade', 'Práticas Pedagógicas', 'Tecnologia & Inovação']),
+    category: z.enum(['Eventos & Comunidade', 'Práticas Pedagógicas', 'Tecnologia & Inovação', 'Matrículas & Escolha', 'Vida Escolar', 'Etapas de Ensino']),
     author: z.string().default('Coordenação Pedagógica & Corpo Docente'),
     image: z.string(),
     imageAlt: z.string().min(8).default('Imagem do cotidiano escolar do Colégio JJR'),

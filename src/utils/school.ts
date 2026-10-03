@@ -16,9 +16,12 @@ export const school = {
   legalName: 'Colégio Jean Jacques Rousseau Ltda ME',
 
   phone: { label: '(11) 3714-4206', href: 'tel:+551137144206', e164: '+55 11 3714-4206' },
-  whatsapp: { label: '(11) 95735-3241', href: 'https://wa.me/5511957353241' },
+  whatsapp: { label: '(11) 95735-3127', href: 'https://wa.me/5511957353127' },
   email: 'colegiojeanjr@yahoo.com.br',
-  instagram: 'https://www.instagram.com/colegiojjr/',
+  instagram: 'https://www.instagram.com/colegio.jjr/',
+  facebook: 'https://web.facebook.com/colegioJJR?_rdc=1&_rdr#',
+  linkedin: 'https://www.linkedin.com/company/col%C3%A9gio-jean-jacques-rousseau/?originalSubdomain=br',
+  youtube: 'https://www.youtube.com/channel/UCW2XoP0trtz9GOhT1NhSiJw',
 
   address: {
     street: 'Rua Professor Gilio Sattin, 210',
@@ -50,3 +53,4 @@ export const fullStreet = `${school.address.street} — ${school.address.distric
 export const mapsQuery = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   `${school.name}, ${school.address.street}, ${school.address.district}, ${school.address.city} - ${school.address.region}`,
 )}`;
+export const mapsEmbed = `https://www.google.com/maps?q=${school.geo.latitude},${school.geo.longitude}&z=16&output=embed`;

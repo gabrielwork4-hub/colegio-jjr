@@ -85,7 +85,7 @@ const graph: Record<string, unknown>[] = [
       opens: school.officeHours.opens,
       closes: school.officeHours.closes,
     },
-    sameAs: [school.instagram],
+    sameAs: [school.instagram, school.facebook, school.linkedin, school.youtube],
   },
   {
     '@type': 'WebSite',
@@ -188,10 +188,16 @@ const structuredData = JSON.stringify({
     <Footer />
     <WhatsAppButton />
     {pathname === '/' && (
-      <>
-        <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
-        <script is:inline>
-          window.addEventListener('DOMContentLoaded', () => {
+      <script is:inline>
+        const identityTokens = new URLSearchParams(window.location.hash.slice(1));
+        const isIdentityCallback = ['invite_token', 'confirmation_token', 'recovery_token', 'access_token']
+          .some((token) => identityTokens.has(token));
+
+        if (isIdentityCallback) {
+          const identityScript = document.createElement('script');
+          identityScript.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+          identityScript.async = true;
+          identityScript.onload = () => {
             const identity = window.netlifyIdentity;
             if (!identity) return;
 
@@ -200,9 +206,10 @@ const structuredData = JSON.stringify({
               window.location.assign('/admin/');
             });
             identity.init();
-          });
-        </script>
-      </>
+          };
+          document.head.appendChild(identityScript);
+        }
+      </script>
     )}
   </body>
 </html>

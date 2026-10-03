@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 interface Props { post: CollectionEntry<'blog'> }
 const { post } = Astro.props;
 const { Content } = await render(post);
-const date = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(post.data.publishedAt);
+const date = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(post.data.publishedAt);
 ---
 
 <BaseLayout

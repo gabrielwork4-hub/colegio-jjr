@@ -14,18 +14,18 @@ const segments = [
 ---
 
 <BaseLayout title="Colégio JJR | Formando gente de valor" description="Do Infantil ao Ensino Médio no Rio Pequeno. Formação integral por princípios, inteligência emocional e valores que preparam para a vida.">
-  <section class="structured-hero structured-hero--arrival">
+  <section class="structured-hero">
     <div class="shell structured-hero-grid">
       <div class="structured-hero-copy">
-        <span class="trust-chip hero-arrival" style="--arrival-delay: 40ms"><span aria-hidden="true">◆</span> <strong>Educação por princípios</strong> no Rio Pequeno</span>
-        <h1 class="hero-arrival" style="--arrival-delay: 120ms">Escola que forma caráter sólido e gente de valor.</h1>
-        <p class="hero-arrival" style="--arrival-delay: 220ms"><strong>Do Infantil ao Ensino Médio.</strong> <strong>Formação integral, inteligência emocional e valores</strong> que preparam para a vida.</p>
-        <div class="hero-actions hero-arrival" style="--arrival-delay: 320ms">
+        <a class="trust-chip" href={internalPath('/matriculas-2027')}><span aria-hidden="true">◆</span> <strong>Matrículas 2027 abertas</strong></a>
+        <h1>Somos eternos aprendizes.</h1>
+        <p>Acreditamos na educação que ensina, inspira e transforma. Conhecimento para aprender, valores para viver.</p>
+        <div class="hero-actions">
           <a class="button button-lime" href={internalPath('/contato#visita')}>Visite nossa escola</a>
           <a class="button button-ghost" href={whatsappLink('Olá! Vim pelo site e gostaria de conhecer o Colégio JJR.')} rel="noopener noreferrer" target="_blank">Fale no WhatsApp</a>
         </div>
       </div>
-      <div class="structured-visual hero-arrival-visual">
+      <div class="structured-visual">
         <img src={internalPath(heroImage)} alt="Duas alunas do Colégio JJR escolhendo livros na biblioteca" width="1100" height="1220" fetchpriority="high" />
         <span class="enrollment-chip">Visitas abertas</span>
         <div class="history-card"><strong>26 anos</strong><span>de história do grupo</span><small>26 anos Galileu e 16 anos JJR no Rio Pequeno</small></div>
@@ -37,39 +37,39 @@ const segments = [
     <div class="shell">
       <header class="center-heading">
         <span class="eyebrow">Nossa essência</span>
-        <h2>Filosofia educacional: formando caráter e intelecto</h2>
-        <p>O conhecimento ganha força quando o estudante aprende também a <strong>escolher, conviver e assumir responsabilidade.</strong></p>
+        <h2>Uma educação guiada por valores</h2>
+        <p>Nossa proposta valoriza o desenvolvimento humano e socioemocional junto à aprendizagem acadêmica.</p>
       </header>
       <div class="essence-grid">
         <article class="essence-card">
           <IconBadge name="principles" />
-          <h3>Princípios, não denominações</h3>
-          <p>Valores cristãos não denominacionais orientam uma <strong>educação ética, sólida e amorosa.</strong></p>
+          <h3>Valores humanos e éticos</h3>
+          <p>Nossa proposta se apoia em valores universais e éticos, <strong>sem vínculo confessional ou religioso.</strong></p>
           <div class="card-note"><strong>Atendimento personalizado</strong><span>Cada aluno é visto e cuidado como indivíduo único.</span></div>
         </article>
         <article class="essence-card">
           <IconBadge name="sam" />
           <h3>Princípios na prática</h3>
           <ul class="check-list">
-            <li><strong>Soberania:</strong> propósito e respeito à autoridade.</li>
-            <li><strong>Autogoverno:</strong> domínio próprio e inteligência emocional.</li>
-            <li><strong>Mordomia:</strong> cuidado com talentos e com o próximo.</li>
+            <li><strong>Respeito:</strong> escuta e convivência.</li>
+            <li><strong>Responsabilidade:</strong> autonomia e cuidado.</li>
+            <li><strong>Empatia:</strong> reconhecer e respeitar o outro.</li>
           </ul>
         </article>
         <article class="essence-card">
           <IconBadge name="routine" />
-          <h3>Rotina com propósito</h3>
-          <p><strong>Devocionais diários e aula semanal de Ensino Bíblico</strong> conectam saber e discernimento moral.</p>
+          <h3>Desenvolvimento socioemocional</h3>
+          <p>A formação também envolve <strong>autoconhecimento, convivência e responsabilidade</strong> nas experiências do dia a dia.</p>
           <div class="card-note"><strong>Segurança e transparência</strong><span>Câmeras exclusivas para a Educação Infantil.</span></div>
         </article>
       </div>
-      <blockquote class="institutional-quote">Não ensinamos uma religião; moldamos o caráter com princípios que transformam vidas e preparam para o futuro.</blockquote>
+      <blockquote class="institutional-quote">Aprender vai além dos livros: conhecimento e valores para a vida.</blockquote>
     </div>
   </section>
 
   <section class="highlights-strip" aria-label="Diferenciais do Colégio JJR">
     <div class="shell highlights-inner">
-      <span><IconBadge name="bible" size="strip" /> Princípios bíblicos</span>
+      <span><IconBadge name="principles" size="strip" /> Valores humanos e éticos</span>
       <span><IconBadge name="innovation" size="strip" /> Tecnologia e inovação</span>
       <span><IconBadge name="creative" size="strip" /> Projetos criativos</span>
       <span><IconBadge name="care" size="strip" /> Cuidado próximo</span>

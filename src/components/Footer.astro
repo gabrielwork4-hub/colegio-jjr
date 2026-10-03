@@ -12,6 +12,7 @@ import { school } from '../utils/school';
       </a>
       <p>Caráter sólido, conhecimento e inteligência emocional para formar gente de valor.</p>
       <small>CNPJ {school.taxId}</small>
+      <img class="footer-positivo" src={internalPath('/fotos/sistema-positivo-selo.webp')} alt="Sistema de Ensino Positivo" width="80" height="80" loading="lazy" decoding="async" />
     </div>
     <div>
       <h2>Explore</h2>
@@ -26,10 +27,15 @@ import { school } from '../utils/school';
       <a href={school.phone.href}>{school.phone.label}</a>
       <a href={school.whatsapp.href} target="_blank" rel="noopener noreferrer">WhatsApp: {school.whatsapp.label}</a>
       <a href={`mailto:${school.email}`}>{school.email}</a>
+      <div class="footer-social" aria-label="Redes sociais">
+        <a href={school.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook do Colégio JJR"><img src={internalPath('/social/facebook.png')} alt="" width="40" height="40" loading="lazy" /></a>
+        <a href={school.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Colégio JJR"><img src={internalPath('/social/instagram.png')} alt="" width="40" height="40" loading="lazy" /></a>
+        <a href={school.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn do Colégio JJR"><img src={internalPath('/social/linkedin.png')} alt="" width="40" height="40" loading="lazy" /></a>
+        <a href={school.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube do Colégio JJR"><img src={internalPath('/social/youtube.png')} alt="" width="40" height="40" loading="lazy" /></a>
+      </div>
     </div>
   </div>
   <div class="footer-bottom shell">
     <span>© {new Date().getFullYear()} {school.legalName}.</span>
-    <a href="https://instagram.com/colegiojjr" target="_blank" rel="noopener noreferrer">Instagram @colegiojjr</a>
   </div>
 </footer>

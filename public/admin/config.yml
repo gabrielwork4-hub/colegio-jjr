@@ -39,6 +39,9 @@ collections:
           - Eventos & Comunidade
           - Práticas Pedagógicas
           - Tecnologia & Inovação
+          - Matrículas & Escolha
+          - Vida Escolar
+          - Etapas de Ensino
       - label: Autor
         name: author
         widget: string
