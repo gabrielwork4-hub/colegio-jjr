@@ -3,7 +3,11 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { internalPath, assetPath } from '../../utils/site';
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) =>
+  Number(b.data.featured) - Number(a.data.featured)
+  || b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+  || a.data.title.localeCompare(b.data.title, 'pt-BR')
+);
 const formatDate = (date: Date) => new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(date);
 ---
 
@@ -12,7 +16,11 @@ const formatDate = (date: Date) => new Intl.DateTimeFormat('pt-BR', { day: '2-di
   <section class="section-tight"><div class="shell blog-grid">
     {posts.map((post) => (
       <article class="card">
-        <a href={internalPath(`/blog/${post.id}/`)}><img src={assetPath(post.data.image)} alt={post.data.imageAlt} loading="lazy" /></a>
+        <a href={internalPath(`/blog/${post.id}/`)} aria-label={`Ler ${post.data.title}`}>
+          {post.data.image
+            ? <img src={assetPath(post.data.image)} alt={post.data.imageAlt} loading="lazy" />
+            : <div class="blog-cover-placeholder" aria-hidden="true"><span>JJR</span><small>Guia para famílias</small></div>}
+        </a>
         <div class="card-body">
           <div class="post-meta"><span>{post.data.category}</span><time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time></div>
           <h2 style="font-size:1.45rem"><a href={internalPath(`/blog/${post.id}/`)}>{post.data.title}</a></h2>

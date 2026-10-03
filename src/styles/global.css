@@ -128,8 +128,13 @@ button, input, textarea { font: inherit; }
 .gallery-copy h2 { color: white; font-size: 1.35rem; margin: 0; }
 .gallery-copy p { font-size: .88rem; margin: .4rem 0 0; opacity: .85; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.blog-cover-placeholder, .post-hero-placeholder { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: .25rem; color: white; background: radial-gradient(circle at 85% 20%, rgb(187 247 107 / 22%) 0, transparent 36%), linear-gradient(135deg, #132d59, var(--navy)); }
+.blog-cover-placeholder { height: 240px; padding: 1.5rem; }
+.blog-cover-placeholder span, .post-hero-placeholder span { color: var(--lime); font: 800 clamp(2.8rem, 5vw, 4rem) var(--display); line-height: 1; }
+.blog-cover-placeholder small, .post-hero-placeholder small { font: 600 .82rem var(--display); letter-spacing: .04em; }
 .post-meta { display: flex; flex-wrap: wrap; gap: .7rem; color: var(--muted); font-size: .78rem; margin-bottom: .8rem; }
 .post-hero-image { width: var(--shell); max-height: 650px; margin: 0 auto; object-fit: cover; border-radius: 2.5rem; }
+.post-hero-placeholder { width: var(--shell); min-height: 320px; margin: 0 auto; padding: clamp(2rem, 5vw, 4rem); border-radius: 2.5rem; }
 .prose { width: min(760px, calc(100% - 40px)); margin: 0 auto; padding-block: 5rem; font-size: 1.08rem; }
 .prose h2 { margin-top: 3.5rem; }
 .prose h3 { margin-top: 2.5rem; }

@@ -10,6 +10,8 @@ imageAlt: "Ambiente interno do Colégio JJR com escada e circulação entre os e
 
 Uma visita escolar fica mais útil quando a família faz as mesmas perguntas a todas as escolas que considera. Procure respostas sobre ensino, rotina, convivência e custos. Peça exemplos da etapa que seu filho vai cursar: uma boa apresentação deve ajudar você a imaginar um dia comum, não apenas mostrar os espaços.
 
+Para as matrículas 2027, leve este roteiro no celular ou impresso e anote as respostas durante a conversa. A comparação posterior fica mais justa quando cada escola foi avaliada pelos mesmos critérios.
+
 ## O que perguntar sobre aprendizagem?
 
 1. **Como a proposta pedagógica aparece nas atividades de uma semana comum?** Peça um exemplo da turma de interesse.
@@ -19,6 +21,8 @@ Uma visita escolar fica mais útil quando a família faz as mesmas perguntas a t
 
 Se quiser aprofundar a primeira pergunta, leia [o que é um projeto pedagógico](/blog/projeto-pedagogico-como-avaliar/).
 
+Observe se a escola consegue mostrar uma atividade recente da série pretendida. Um exemplo concreto permite entender melhor a proposta do que uma lista de palavras como “autonomia” ou “inovação”.
+
 ## O que perguntar sobre o dia a dia?
 
 5. **Como é a rotina da turma, da chegada à saída?** Inclua pausas, alimentação e atividades fora da sala.
@@ -27,6 +31,8 @@ Se quiser aprofundar a primeira pergunta, leia [o que é um projeto pedagógico]
 8. **Como as famílias recebem informações e podem conversar com a equipe?** Entenda os canais e a frequência de contato.
 
 Para famílias que precisam de uma jornada estendida, veja [o que considerar no período integral](/blog/escola-periodo-integral-vale-a-pena/).
+
+Na Educação Infantil, peça para conhecer os espaços usados pelas crianças e converse sobre o acolhimento de novos alunos. Na passagem para o 6º ano, inclua perguntas sobre organização dos estudos e comunicação entre professores e famílias. A visita deve refletir a etapa real do estudante.
 
 ## O que perguntar antes de tomar a decisão?
 
@@ -38,3 +44,5 @@ Para famílias que precisam de uma jornada estendida, veja [o que considerar no 
 ## Como usar as respostas depois da visita?
 
 Registre o que foi respondido e o que ainda precisa ser confirmado. Compare as escolas pelos mesmos critérios e envolva o estudante na conversa de acordo com sua idade. Se quiser conhecer o Colégio JJR, [agende uma visita](/contato/#visita) ou veja [como começar a matrícula 2027](/blog/matriculas-2027-como-comecar/).
+
+Vale separar três colunas nas suas anotações: **resposta recebida**, **evidência vista na visita** e **ponto a confirmar**. Para preço e disponibilidade, peça sempre a informação atualizada para a turma desejada. Se a escola faz parte de uma busca na região, use também nosso [guia para comparar opções no Rio Pequeno e Butantã](/blog/escolas-rio-pequeno-butanta-como-comparar/).

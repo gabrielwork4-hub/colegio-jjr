@@ -50,11 +50,13 @@ collections:
         name: image
         widget: image
         choose_url: true
+        required: false
       - label: Descrição da imagem
         name: imageAlt
         widget: string
         hint: "Descreva o que aparece na imagem para leitores de tela e mecanismos de busca."
-      - label: Destacar na página inicial
+        required: false
+      - label: Destacar no início do blog
         name: featured
         widget: boolean
         default: false
