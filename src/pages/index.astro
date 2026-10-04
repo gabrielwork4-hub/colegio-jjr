@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { internalPath } from '../utils/site';
-import { whatsappLink } from '../utils/school';
+import { school, whatsappLink } from '../utils/school';
 import IconBadge from '../components/IconBadge.astro';
 
 const heroImage = '/fotos/home-hero-alunas-biblioteca.webp';
@@ -13,13 +13,13 @@ const segments = [
 ];
 ---
 
-<BaseLayout title="Colégio JJR | Formando gente de valor" description="Do Infantil ao Ensino Médio no Rio Pequeno. Formação integral por princípios, inteligência emocional e valores que preparam para a vida.">
+<BaseLayout title={`${school.name} | Formando gente de valor`} description={`${school.name}, no Rio Pequeno: Educação Infantil ao Ensino Médio com formação acadêmica, inteligência emocional e valores para a vida.`}>
   <section class="structured-hero">
     <div class="shell structured-hero-grid">
       <div class="structured-hero-copy">
         <a class="trust-chip" href={internalPath('/matriculas-2027')}><span aria-hidden="true">◆</span> <strong>Matrículas 2027 abertas</strong></a>
         <h1>Somos eternos aprendizes.</h1>
-        <p>Acreditamos na educação que ensina, inspira e transforma. Conhecimento para aprender, valores para viver.</p>
+        <p>No <strong>{school.name}</strong>, acreditamos na educação que ensina, inspira e transforma. Conhecimento para aprender, valores para viver.</p>
         <div class="hero-actions">
           <a class="button button-lime" href={internalPath('/contato#visita')}>Visite nossa escola</a>
           <a class="button button-ghost" href={whatsappLink('Olá! Vim pelo site e gostaria de conhecer o Colégio JJR.')} rel="noopener noreferrer" target="_blank">Fale no WhatsApp</a>
@@ -67,7 +67,7 @@ const segments = [
     </div>
   </section>
 
-  <section class="highlights-strip" aria-label="Diferenciais do Colégio JJR">
+  <section class="highlights-strip" aria-label={`Diferenciais do ${school.name}`}>
     <div class="shell highlights-inner">
       <span><IconBadge name="principles" size="strip" /> Valores humanos e éticos</span>
       <span><IconBadge name="innovation" size="strip" /> Tecnologia e inovação</span>

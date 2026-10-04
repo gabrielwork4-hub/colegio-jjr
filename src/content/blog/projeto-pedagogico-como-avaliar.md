@@ -3,7 +3,7 @@ title: "O que é projeto pedagógico e como avaliá-lo na escolha da escola?"
 description: "Entenda como olhar além do discurso e pedir exemplos da proposta pedagógica na rotina escolar."
 publishedAt: 2026-10-03
 category: "Práticas Pedagógicas"
-author: "Colégio JJR"
+author: "Colégio Jean Jacques Rousseau"
 image: "/fotos/segmento-infantil-lupa.webp"
 imageAlt: "Criança da Educação Infantil observando o jardim com uma lupa"
 ---

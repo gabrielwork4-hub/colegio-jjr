@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { school, fullStreet, mapsQuery, mapsEmbed } from '../utils/school';
 ---
 
-<BaseLayout title="Contato e visita | Colégio JJR" description="Agende uma visita ao Colégio JJR em Rio Pequeno, São Paulo, ou fale conosco por telefone e WhatsApp." pageType="ContactPage">
-  <header class="page-hero"><div class="shell"><span class="eyebrow">Vamos conversar</span><h1>Venha sentir a escola de perto.</h1><p>Conheça a proposta pedagógica, caminhe pelos espaços e tire suas dúvidas com a nossa equipe.</p></div></header>
+<BaseLayout title={`Contato e visita | ${school.name}`} description={`Agende uma visita ao ${school.name} no Rio Pequeno, São Paulo, ou fale conosco por telefone e WhatsApp.`} pageType="ContactPage">
+  <header class="page-hero"><div class="shell"><span class="eyebrow">Vamos conversar</span><h1>Venha sentir a escola de perto.</h1><p>Conheça o {school.name}, caminhe pelos espaços e tire suas dúvidas com a nossa equipe.</p></div></header>
   <section class="section-tight"><div class="shell contact-grid">
     <div>
       <h2>Você escolhe o canal.</h2>

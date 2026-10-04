@@ -3,9 +3,9 @@ title: "Educação Infantil no Rio Pequeno: o que observar na escolha?"
 description: "Critérios práticos para visitar uma escola de Educação Infantil no Rio Pequeno e comparar propostas para 2027."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"
-author: "Colégio JJR"
-image: ""
-imageAlt: ""
+author: "Colégio Jean Jacques Rousseau"
+image: "/fotos/blog-educacao-infantil-rio-pequeno.webp"
+imageAlt: "Duas crianças do colégio explorando uma atividade em livro na biblioteca"
 ---
 
 Ao escolher uma escola de Educação Infantil no Rio Pequeno, observe como a proposta aparece nas experiências das crianças e na relação com as famílias. Localização e horário importam, mas vale conhecer também os espaços, a rotina, o acolhimento e a forma de comunicação da equipe. Uma visita à etapa desejada responde melhor a essas perguntas do que uma descrição genérica da escola.

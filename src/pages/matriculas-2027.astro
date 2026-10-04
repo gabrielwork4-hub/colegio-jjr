@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { whatsappLink } from '../utils/school';
+import { school, whatsappLink } from '../utils/school';
 
 const reasons = [
   ['Formação por princípios', 'Caráter, responsabilidade e propósito integrados à vida escolar.'],
@@ -17,13 +17,13 @@ const faqs = [
 ] as const;
 ---
 
-<BaseLayout title="Matrículas 2027 | Colégio JJR" description="Cadastre seu interesse nas matrículas 2027 do Colégio JJR e agende uma visita para conhecer nossa proposta pedagógica." faqs={faqs}>
+<BaseLayout title={`Matrículas 2027 | ${school.name}`} description={`Cadastre seu interesse nas matrículas 2027 do ${school.name} e agende uma visita para conhecer nossa proposta pedagógica.`} faqs={faqs}>
   <header class="enrollment-hero">
     <div class="shell enrollment-hero-grid">
       <div>
         <span class="enrollment-label">Matrículas 2027</span>
         <h1>Uma escolha que acompanha seu filho por inteiro.</h1>
-        <p>Do Infantil ao Ensino Médio, o JJR une formação acadêmica, inteligência emocional e princípios em uma escola próxima das famílias.</p>
+        <p>Do Infantil ao Ensino Médio, o {school.name} une formação acadêmica, inteligência emocional e princípios em uma escola próxima das famílias.</p>
         <div class="hero-actions">
           <a class="button button-lime" href="#interesse">Cadastre seu interesse</a>
           <a class="button campaign-ghost" href={whatsappLink('Olá! Gostaria de informações sobre as matrículas 2027.')} target="_blank" rel="noopener noreferrer">Fale com a escola</a>

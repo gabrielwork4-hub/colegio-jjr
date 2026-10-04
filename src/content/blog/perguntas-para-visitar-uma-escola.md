@@ -3,7 +3,7 @@ title: "Como escolher a escola do seu filho? 12 perguntas para a visita"
 description: "Leve estas 12 perguntas para entender a rotina, a proposta pedagógica e o acompanhamento antes de escolher uma escola."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"
-author: "Colégio JJR"
+author: "Colégio Jean Jacques Rousseau"
 image: "/fotos/home-escada.webp"
 imageAlt: "Ambiente interno do Colégio JJR com escada e circulação entre os espaços"
 ---

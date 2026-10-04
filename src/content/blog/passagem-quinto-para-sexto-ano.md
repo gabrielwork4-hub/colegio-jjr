@@ -3,9 +3,9 @@ title: "Do 5º para o 6º ano: o que observar na escolha da escola?"
 description: "Um roteiro para conversar sobre autonomia, rotina de estudos e acompanhamento na entrada do Fundamental II em 2027."
 publishedAt: 2026-10-03
 category: "Etapas de Ensino"
-author: "Colégio JJR"
-image: ""
-imageAlt: ""
+author: "Colégio Jean Jacques Rousseau"
+image: "/fotos/blog-transicao-quinto-sexto-ano.webp"
+imageAlt: "Duas estudantes do colégio reunidas com material de estudo na biblioteca"
 ---
 
 A passagem do 5º para o 6º ano marca a entrada no Ensino Fundamental II. Para escolher a escola em 2027, vale perguntar como a nova rotina é apresentada aos estudantes, de que forma os professores acompanham o aprendizado e como a família participa dessa transição. O objetivo é entender o apoio disponível para desenvolver autonomia sem perder a proximidade com a escola.

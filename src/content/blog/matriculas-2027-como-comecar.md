@@ -1,15 +1,15 @@
 ---
-title: "Matrículas 2027 no Colégio JJR: como começar?"
-description: "Saiba como manifestar interesse, visitar a escola e receber orientações sobre vagas para 2027 no Colégio JJR."
+title: "Matrículas 2027 no Colégio Jean Jacques Rousseau: como começar?"
+description: "Saiba como manifestar interesse, visitar a escola e receber orientações sobre vagas para 2027 no Colégio Jean Jacques Rousseau."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"
-author: "Colégio JJR"
+author: "Colégio Jean Jacques Rousseau"
 image: "/fotos/home-hero-alunas-biblioteca.webp"
 imageAlt: "Duas estudantes do Colégio JJR consultando livros na biblioteca"
 featured: true
 ---
 
-Para começar a matrícula de 2027 no Colégio JJR, a família pode informar o segmento e a série pretendida, conversar com a equipe e agendar uma visita. A escola confirma a disponibilidade da turma e orienta os próximos passos. O envio do formulário de interesse, por si só, não reserva uma vaga.
+Para começar a matrícula de 2027 no Colégio Jean Jacques Rousseau, a família pode informar o segmento e a série pretendida, conversar com a equipe e agendar uma visita. A escola confirma a disponibilidade da turma e orienta os próximos passos. O envio do formulário de interesse, por si só, não reserva uma vaga.
 
 Este guia reúne o que já pode ser preparado e o que precisa ser confirmado diretamente com a secretaria. Assim, a conversa começa pelas necessidades reais do estudante e da família.
 

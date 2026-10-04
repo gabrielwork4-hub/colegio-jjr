@@ -3,7 +3,7 @@ title: "Escola de período integral vale a pena? O que considerar"
 description: "Entenda o que perguntar sobre horários, descanso, alimentação e atividades antes de escolher o período integral."
 publishedAt: 2026-10-03
 category: "Vida Escolar"
-author: "Colégio JJR"
+author: "Colégio Jean Jacques Rousseau"
 image: "/fotos/convivencia.webp"
 imageAlt: "Espaço de convivência utilizado por estudantes do Colégio JJR"
 ---

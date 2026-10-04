@@ -3,9 +3,9 @@ title: "Adaptação escolar: como preparar a chegada a uma escola nova?"
 description: "Um guia para conversar com a criança e com a escola antes das primeiras semanas de uma nova rotina em 2027."
 publishedAt: 2026-10-03
 category: "Vida Escolar"
-author: "Colégio JJR"
-image: ""
-imageAlt: ""
+author: "Colégio Jean Jacques Rousseau"
+image: "/fotos/blog-adaptacao-escolar.webp"
+imageAlt: "Duas alunas sorrindo durante uma atividade na biblioteca do colégio"
 ---
 
 Adaptação escolar é o período em que o estudante e a família conhecem pessoas, espaços e combinados de uma nova rotina. Ela não se limita ao primeiro dia de aula nem acontece no mesmo ritmo para todas as crianças. O caminho mais útil é combinar informações claras com a escola, escutar o estudante e acompanhar o que muda nas primeiras semanas.

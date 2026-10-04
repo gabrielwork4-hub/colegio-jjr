@@ -8,7 +8,7 @@ import { school } from '../utils/school';
     <div>
       <a class="brand brand-light" href={internalPath('/')}>
         <img class="brand-mark" src={internalPath('/logo-jjr.png')} alt="" width="33" height="42" />
-        <span><strong>{school.shortName}</strong><small>{school.tagline}</small></span>
+        <span><strong>{school.name}</strong><small>{school.tagline}</small></span>
       </a>
       <p>Caráter sólido, conhecimento e inteligência emocional para formar gente de valor.</p>
       <small>CNPJ {school.taxId}</small>
@@ -28,10 +28,10 @@ import { school } from '../utils/school';
       <a href={school.whatsapp.href} target="_blank" rel="noopener noreferrer">WhatsApp: {school.whatsapp.label}</a>
       <a href={`mailto:${school.email}`}>{school.email}</a>
       <div class="footer-social" aria-label="Redes sociais">
-        <a href={school.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook do Colégio JJR"><img src={internalPath('/social/facebook.png')} alt="" width="40" height="40" loading="lazy" /></a>
-        <a href={school.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Colégio JJR"><img src={internalPath('/social/instagram.png')} alt="" width="40" height="40" loading="lazy" /></a>
-        <a href={school.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn do Colégio JJR"><img src={internalPath('/social/linkedin.png')} alt="" width="40" height="40" loading="lazy" /></a>
-        <a href={school.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube do Colégio JJR"><img src={internalPath('/social/youtube.png')} alt="" width="40" height="40" loading="lazy" /></a>
+        <a href={school.facebook} target="_blank" rel="noopener noreferrer" aria-label={`Facebook do ${school.name}`}><img src={internalPath('/social/facebook.png')} alt="" width="40" height="40" loading="lazy" /></a>
+        <a href={school.instagram} target="_blank" rel="noopener noreferrer" aria-label={`Instagram do ${school.name}`}><img src={internalPath('/social/instagram.png')} alt="" width="40" height="40" loading="lazy" /></a>
+        <a href={school.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn do ${school.name}`}><img src={internalPath('/social/linkedin.png')} alt="" width="40" height="40" loading="lazy" /></a>
+        <a href={school.youtube} target="_blank" rel="noopener noreferrer" aria-label={`YouTube do ${school.name}`}><img src={internalPath('/social/youtube.png')} alt="" width="40" height="40" loading="lazy" /></a>
       </div>
     </div>
   </div>

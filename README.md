@@ -1,6 +1,6 @@
-# Colégio JJR
+# Colégio Jean Jacques Rousseau
 
-Site institucional e editorial do Colégio JJR, construído com Astro.
+Site institucional e editorial do Colégio Jean Jacques Rousseau (JJR), construído com Astro.
 
 ## Comandos
 

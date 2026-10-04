@@ -2,6 +2,7 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { assetPath } from '../../utils/site';
+import { school } from '../../utils/school';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -12,10 +13,11 @@ interface Props { post: CollectionEntry<'blog'> }
 const { post } = Astro.props;
 const { Content } = await render(post);
 const date = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(post.data.publishedAt);
+const pageTitle = post.data.title.includes(school.name) ? post.data.title : `${post.data.title} | ${school.name}`;
 ---
 
 <BaseLayout
-  title={`${post.data.title} | Colégio JJR`}
+  title={pageTitle}
   description={post.data.description}
   image={post.data.image ? assetPath(post.data.image) : undefined}
   contentType="article"

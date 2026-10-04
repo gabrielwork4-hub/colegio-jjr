@@ -9,7 +9,7 @@ const blog = defineCollection({
     description: z.string(),
     publishedAt: z.coerce.date(),
     category: z.enum(['Eventos & Comunidade', 'Práticas Pedagógicas', 'Tecnologia & Inovação', 'Matrículas & Escolha', 'Vida Escolar', 'Etapas de Ensino']),
-    author: z.string().default('Coordenação Pedagógica & Corpo Docente'),
+    author: z.string().default('Colégio Jean Jacques Rousseau'),
     image: z.string().default(''),
     imageAlt: z.string().default(''),
     featured: z.boolean().default(false),

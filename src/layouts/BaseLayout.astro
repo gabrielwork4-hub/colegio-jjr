@@ -35,7 +35,7 @@ const {
 const siteUrl = Astro.site ?? new URL('https://colegiojjr.com.br');
 const canonical = new URL(Astro.url.pathname, siteUrl);
 const absoluteImage = new URL(image, siteUrl);
-const pageName = title.replace(/\s*\|\s*Colégio JJR.*$/u, '');
+const pageName = title.split(' | ')[0];
 const pathname = Astro.url.pathname;
 const labels: Record<string, string> = {
   blog: 'Por dentro do JJR',
@@ -91,7 +91,8 @@ const graph: Record<string, unknown>[] = [
     '@type': 'WebSite',
     '@id': websiteId,
     url: new URL('/', siteUrl).href,
-    name: 'Colégio JJR',
+    name: school.name,
+    alternateName: school.shortName,
     inLanguage: 'pt-BR',
     publisher: { '@id': schoolId },
   },
@@ -138,7 +139,7 @@ if (contentType === 'article' && publishedAt) {
     datePublished: new Date(publishedAt).toISOString(),
     dateModified: new Date(modifiedAt ?? publishedAt).toISOString(),
     inLanguage: 'pt-BR',
-    author: { '@type': 'Organization', name: author ?? 'Coordenação Pedagógica do Colégio JJR' },
+    author: { '@type': 'Organization', name: author ?? `Coordenação Pedagógica do ${school.name}` },
     publisher: { '@id': schoolId },
     mainEntityOfPage: { '@id': webpageId },
   });
@@ -170,7 +171,7 @@ const structuredData = JSON.stringify({
     <title>{title}</title>
     <meta property="og:type" content={contentType} />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:site_name" content="Colégio JJR" />
+    <meta property="og:site_name" content={school.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={absoluteImage} />

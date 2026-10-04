@@ -3,7 +3,7 @@ title: "Escolas no Rio Pequeno e Butantã: como comparar as opções?"
 description: "Um roteiro para comparar escolas da região com atenção à proposta pedagógica, rotina, deslocamento e atendimento."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"
-author: "Colégio JJR"
+author: "Colégio Jean Jacques Rousseau"
 image: "/fotos/sala-de-aula-mural.webp"
 imageAlt: "Sala de aula do Colégio JJR com carteiras, lousa e mural azul"
 featured: true

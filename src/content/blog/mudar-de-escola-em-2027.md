@@ -3,9 +3,9 @@ title: "Mudar de escola em 2027: como organizar a decisão da família?"
 description: "Veja o que comparar, perguntar e preparar ao considerar uma nova escola para o ano letivo de 2027."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"
-author: "Colégio JJR"
-image: ""
-imageAlt: ""
+author: "Colégio Jean Jacques Rousseau"
+image: "/fotos/blog-mudar-de-escola-2027.webp"
+imageAlt: "Dois estudantes do colégio sentados juntos na biblioteca com material de estudo"
 ---
 
 Para mudar de escola em 2027, a família precisa confirmar a série e a disponibilidade na nova instituição, conhecer a proposta para aquela etapa e entender os próximos passos com as duas secretarias. A decisão fica mais segura quando considera também o estudante: sua rotina atual, o motivo da mudança e o apoio necessário na chegada.

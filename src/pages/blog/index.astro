@@ -11,7 +11,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, 
 const formatDate = (date: Date) => new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(date);
 ---
 
-<BaseLayout title="Por dentro do JJR | Blog do Colégio JJR" description="Guias para escolher a escola, entender cada etapa de ensino e acompanhar o cotidiano do Colégio JJR." pageType="CollectionPage">
+<BaseLayout title="Por dentro do JJR | Blog do Colégio Jean Jacques Rousseau" description="Guias para escolher a escola, entender cada etapa de ensino e acompanhar o cotidiano do Colégio Jean Jacques Rousseau." pageType="CollectionPage">
   <header class="page-hero"><div class="shell"><span class="eyebrow">Por dentro do JJR</span><h1>Escolhas mais claras, aprendizagem mais próxima.</h1><p>Guias para as famílias, da escolha da escola à rotina em cada etapa de ensino.</p></div></header>
   <section class="section-tight"><div class="shell blog-grid">
     {posts.map((post) => (
