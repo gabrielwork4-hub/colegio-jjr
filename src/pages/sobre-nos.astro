@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { internalPath } from '../utils/site';
+import { school } from '../utils/school';
+
+const principles = [
+  {
+    number: '01',
+    title: 'Conhecimento com sentido',
+    text: 'Aprender envolve investigar, criar, fazer perguntas e relacionar o que se estuda com o mundo à nossa volta.',
+  },
+  {
+    number: '02',
+    title: 'Valores na convivência',
+    text: 'Respeito, responsabilidade e empatia fazem parte das relações e das escolhas de todos os dias.',
+  },
+  {
+    number: '03',
+    title: 'Cada estudante importa',
+    text: 'Acompanhamos o desenvolvimento acadêmico e socioemocional com diálogo próximo entre escola e família.',
+  },
+];
+---
+
+<BaseLayout
+  title={`Sobre nós | ${school.name}`}
+  description={`Conheça o ${school.name}, no Rio Pequeno: nossa história, os princípios que orientam o ensino e a jornada da Educação Infantil ao Ensino Médio.`}
+  image={internalPath('/fotos/home-alunos.webp')}
+>
+  <section class="about-hero">
+    <div class="shell about-hero-grid">
+      <div class="about-intro">
+        <span class="eyebrow">Sobre nós</span>
+        <h1>Uma escola para aprender e pertencer.</h1>
+        <p>Somos o <strong>{school.name}</strong>, no Rio Pequeno. Unimos formação acadêmica, valores humanos e cuidado próximo para acompanhar cada estudante em sua própria jornada.</p>
+        <div class="hero-actions">
+          <a class="button button-lime" href={internalPath('/contato#visita')}>Venha nos conhecer</a>
+          <a class="button button-ghost" href={internalPath('/segmentos')}>Explore os segmentos</a>
+        </div>
+        <p class="about-location">Rio Pequeno, São Paulo <span aria-hidden="true">·</span> Da Educação Infantil ao Ensino Médio</p>
+      </div>
+      <figure class="about-hero-photo">
+        <img src={internalPath('/fotos/home-alunos.webp')} alt="Estudantes do Colégio Jean Jacques Rousseau aprendendo juntos na biblioteca" width="1100" height="1220" fetchpriority="high" />
+        <figcaption>Conhecimento para aprender. Valores para viver.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="about-story section">
+    <div class="shell about-story-grid">
+      <div class="about-story-title">
+        <span class="eyebrow">Nossa história</span>
+        <h2>Raízes no bairro. Olhar para o futuro.</h2>
+      </div>
+      <div class="about-story-copy">
+        <p>O JJR faz parte da história de famílias do Rio Pequeno e reúne a experiência educacional do grupo Galileu. Nossa trajetória cresce com os estudantes que passam por aqui, da primeira descoberta aos próximos passos depois da escola.</p>
+        <p>Acreditamos em uma educação que ensina, inspira e transforma. Por isso, o aprendizado acadêmico caminha junto com a autonomia, a convivência e a inteligência emocional.</p>
+        <a class="about-inline-link" href={internalPath('/blog')}>Veja o cotidiano do JJR <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-principles section">
+    <div class="shell">
+      <div class="about-section-heading">
+        <span class="eyebrow">O que nos guia</span>
+        <h2>Princípios que aparecem na prática.</h2>
+        <p>Nossa proposta se apoia em valores humanos e éticos, sem vínculo confessional ou religioso.</p>
+      </div>
+      <div class="about-principles-grid">
+        {principles.map((principle) => (
+          <article class="about-principle">
+            <span class="about-principle-number" aria-hidden="true">{principle.number}</span>
+            <h3>{principle.title}</h3>
+            <p>{principle.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="about-life section">
+    <div class="shell about-life-grid">
+      <figure class="about-life-photo">
+        <img src={internalPath('/fotos/home-escada.webp')} alt="Escadaria do Colégio JJR com palavras que representam valores da escola" width="1000" height="1200" loading="lazy" decoding="async" />
+      </figure>
+      <div class="about-life-copy">
+        <span class="eyebrow">Nosso jeito de educar</span>
+        <h2>Uma formação para a vida inteira.</h2>
+        <p>Em cada etapa, criamos oportunidades para aprender, conviver e ganhar autonomia. Projetos, leitura, ciência, tecnologia, esporte e experiências em grupo ampliam o que acontece na sala de aula.</p>
+        <p>Da Educação Infantil ao Ensino Médio, respeitamos os desafios de cada fase e mantemos o diálogo com as famílias ao longo do caminho.</p>
+        <div class="about-life-links">
+          <a href={internalPath('/segmentos')}>Conheça os segmentos <span aria-hidden="true">↗</span></a>
+          <a href={internalPath('/estrutura')}>Veja nossos espaços <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-visit section">
+    <div class="shell about-visit-inner">
+      <div>
+        <span class="about-visit-label">A escola de perto</span>
+        <h2>O melhor jeito de nos conhecer é estar aqui.</h2>
+        <p>Venha visitar o JJR, conhecer nossos espaços e conversar sobre a próxima etapa da educação da sua família.</p>
+      </div>
+      <a class="button button-lime" href={internalPath('/contato#visita')}>Agendar uma visita</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero { background: var(--white); overflow: hidden; }
+  .about-hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(3rem, 7vw, 6rem); padding-block: clamp(3rem, 7vw, 6rem); }
+  .about-intro h1 { max-width: 11ch; margin: .6rem 0 1.5rem; font-size: clamp(3rem, 5.2vw, 5.2rem); }
+  .about-intro > p:first-of-type { max-width: 47ch; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.18rem); }
+  .about-intro > p strong { color: var(--navy); }
+  .about-location { margin: 3.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font: 700 .75rem/1.6 var(--display); }
+  .about-location span { padding-inline: .4rem; color: var(--lime-ink); }
+  .about-hero-photo { position: relative; height: min(620px, 54vw); min-height: 460px; margin: 0; }
+  .about-hero-photo img { width: 100%; height: 100%; border-radius: 2rem; object-fit: cover; object-position: center 35%; }
+  .about-hero-photo figcaption { position: absolute; left: -1.5rem; bottom: 1.5rem; max-width: 16rem; padding: 1.25rem 1.5rem; border-radius: 1rem; color: var(--navy); background: var(--lime); box-shadow: 0 12px 30px rgb(6 22 55 / 14%); font: 800 1rem/1.35 var(--display); }
+  .about-story { border-top: 1px solid var(--line); background: var(--paper); }
+  .about-story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(3rem, 8vw, 8rem); }
+  .about-story-title h2 { max-width: 12ch; margin-bottom: 0; }
+  .about-story-copy { padding-top: .3rem; }
+  .about-story-copy p { color: var(--muted); font-size: 1.1rem; }
+  .about-story-copy p:first-child { color: var(--navy); font-size: 1.2rem; font-weight: 600; }
+  .about-inline-link, .about-life-links a { display: inline-flex; align-items: center; gap: .6rem; padding-bottom: .2rem; border-bottom: 2px solid var(--lime-ink); color: var(--navy); font: 800 .85rem/1.4 var(--display); }
+  .about-inline-link { margin-top: 1rem; }
+  .about-inline-link:hover, .about-life-links a:hover { border-color: var(--amber); }
+  .about-principles { background: var(--soft); }
+  .about-section-heading { max-width: 700px; margin-bottom: 3rem; }
+  .about-section-heading h2 { max-width: 14ch; margin-bottom: 1rem; }
+  .about-section-heading p { color: var(--muted); font-size: 1.05rem; }
+  .about-principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #bdc8cf; }
+  .about-principle { padding: 2rem 2rem 0 0; }
+  .about-principle + .about-principle { padding-left: 2rem; border-left: 1px solid #bdc8cf; }
+  .about-principle-number { color: var(--lime-ink); font: 800 .8rem/1 var(--display); }
+  .about-principle h3 { margin: 2.5rem 0 .85rem; }
+  .about-principle p { max-width: 35ch; margin-bottom: 0; color: var(--muted); font-size: .95rem; }
+  .about-life { background: var(--white); }
+  .about-life-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(3rem, 8vw, 8rem); }
+  .about-life-photo { height: 540px; margin: 0; overflow: hidden; border-radius: 2rem; }
+  .about-life-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .about-life-copy h2 { max-width: 13ch; }
+  .about-life-copy p { color: var(--muted); font-size: 1.05rem; }
+  .about-life-links { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
+  .about-visit { background: var(--navy); color: white; }
+  .about-visit-inner { display: flex; align-items: end; justify-content: space-between; gap: 3rem; }
+  .about-visit-inner h2 { max-width: 16ch; margin: .8rem 0 1rem; color: white; }
+  .about-visit-inner p { max-width: 55ch; margin-bottom: 0; color: #c4cfe2; }
+  .about-visit-inner .button { flex: none; }
+  .about-visit-label { color: var(--lime); font: 800 .82rem/1 var(--display); }
+  @media (max-width: 900px) {
+    .about-hero-grid, .about-story-grid, .about-life-grid { grid-template-columns: 1fr; }
+    .about-hero-photo { height: 520px; min-height: 0; }
+    .about-hero-photo figcaption { left: 1rem; }
+    .about-location { margin-top: 2.5rem; }
+    .about-story-title h2, .about-life-copy h2 { max-width: 18ch; }
+    .about-life-photo { height: 480px; }
+  }
+  @media (max-width: 620px) {
+    .about-hero-grid { gap: 2.5rem; padding-block: 3.5rem; }
+    .about-intro h1 { font-size: clamp(2.7rem, 11vw, 4rem); }
+    .about-hero-photo { height: 440px; }
+    .about-hero-photo img, .about-life-photo { border-radius: 1.5rem; }
+    .about-principles-grid { grid-template-columns: 1fr; }
+    .about-principle, .about-principle + .about-principle { padding: 1.5rem 0; border-left: 0; border-bottom: 1px solid #bdc8cf; }
+    .about-principle h3 { margin: 1rem 0 .65rem; }
+    .about-life-photo { height: 380px; }
+    .about-visit-inner { display: block; }
+    .about-visit-inner .button { margin-top: 2rem; }
+  }
+</style>
