@@ -3,173 +3,240 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { internalPath } from '../utils/site';
 import { school } from '../utils/school';
 
-const principles = [
+const milestones = [
   {
-    number: '01',
-    title: 'Conhecimento com sentido',
-    text: 'Aprender envolve investigar, criar, fazer perguntas e relacionar o que se estuda com o mundo à nossa volta.',
+    year: '1999',
+    eyebrow: 'O primeiro sonho',
+    title: 'Nasce O Pequeno Galileu',
+    paragraphs: [
+      'Nossa história começa com o desejo de cuidar, acolher e oferecer às crianças uma educação que unisse conhecimento, valores, afetividade e respeito pela infância.',
+      'As crianças cresceram. Com elas, cresceu também o sonho de continuar essa caminhada nas etapas seguintes.',
+    ],
   },
   {
-    number: '02',
-    title: 'Valores na convivência',
-    text: 'Respeito, responsabilidade e empatia fazem parte das relações e das escolhas de todos os dias.',
+    year: '2010',
+    eyebrow: '30 de setembro',
+    title: 'O Colégio Jean Jacques Rousseau é homologado',
+    paragraphs: [
+      'A continuidade desse projeto ganha nome e forma. O JJR nasce para acompanhar os estudantes em uma trajetória escolar cada vez mais completa.',
+    ],
   },
   {
-    number: '03',
-    title: 'Cada estudante importa',
-    text: 'Acompanhamos o desenvolvimento acadêmico e socioemocional com diálogo próximo entre escola e família.',
+    year: '2011',
+    eyebrow: '3 de fevereiro',
+    title: 'As portas se abrem',
+    paragraphs: [
+      'Começamos com as primeiras turmas do Ensino Fundamental. Ano após ano, novas séries foram abertas até chegarmos ao Ensino Médio.',
+    ],
   },
+  {
+    year: '2018',
+    eyebrow: 'Um ciclo se completa',
+    title: 'As primeiras formaturas',
+    paragraphs: [
+      'Formamos nossas primeiras turmas do 9º ano e do Ensino Médio. Entre os formandos, havia alunos que cresceram conosco desde os primeiros anos de O Pequeno Galileu.',
+      'Era a confirmação de que aquele pequeno sonho havia se transformado em uma grande história.',
+    ],
+  },
+];
+
+const learningPaths = [
+  'Educação socioemocional',
+  'Cultura maker',
+  'Projeto de Vida',
+  'Educação Financeira',
+  'Olimpíadas do Conhecimento',
+  'Empreendedorismo',
 ];
 ---
 
 <BaseLayout
   title={`Sobre nós | ${school.name}`}
-  description={`Conheça o ${school.name}, no Rio Pequeno: nossa história, os princípios que orientam o ensino e a jornada da Educação Infantil ao Ensino Médio.`}
+  description={`Da criação de O Pequeno Galileu, em 1999, ao ${school.name}: conheça nossa história, a origem do nome e os princípios que orientam a escola no Rio Pequeno.`}
   image={internalPath('/fotos/home-alunos.webp')}
 >
   <section class="about-hero">
     <div class="shell about-hero-grid">
       <div class="about-intro">
-        <span class="eyebrow">Sobre nós</span>
-        <h1>Uma escola para aprender e pertencer.</h1>
-        <p>Somos o <strong>{school.name}</strong>, no Rio Pequeno. Unimos formação acadêmica, valores humanos e cuidado próximo para acompanhar cada estudante em sua própria jornada.</p>
-        <div class="hero-actions">
-          <a class="button button-lime" href={internalPath('/contato#visita')}>Venha nos conhecer</a>
-          <a class="button button-ghost" href={internalPath('/segmentos')}>Explore os segmentos</a>
-        </div>
+        <span class="eyebrow">Nossa história</span>
+        <h1>Toda grande história nasce de um sonho.</h1>
+        <p>A nossa começou antes de as portas do <strong>{school.name}</strong> se abrirem. Começou com uma forma de olhar para a infância — e continua com cada estudante que aprende e cresce conosco.</p>
+        <a class="story-anchor" href="#linha-do-tempo">Percorra nossa história <span aria-hidden="true">↓</span></a>
         <p class="about-location">Rio Pequeno, São Paulo <span aria-hidden="true">·</span> Da Educação Infantil ao Ensino Médio</p>
       </div>
       <figure class="about-hero-photo">
         <img src={internalPath('/fotos/home-alunos.webp')} alt="Estudantes do Colégio Jean Jacques Rousseau aprendendo juntos na biblioteca" width="1100" height="1220" fetchpriority="high" />
-        <figcaption>Conhecimento para aprender. Valores para viver.</figcaption>
+        <figcaption>Formando eternos aprendizes.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="about-story section">
-    <div class="shell about-story-grid">
-      <div class="about-story-title">
-        <span class="eyebrow">Nossa história</span>
-        <h2>Raízes no bairro. Olhar para o futuro.</h2>
-      </div>
-      <div class="about-story-copy">
-        <p>O JJR faz parte da história de famílias do Rio Pequeno e reúne a experiência educacional do grupo Galileu. Nossa trajetória cresce com os estudantes que passam por aqui, da primeira descoberta aos próximos passos depois da escola.</p>
-        <p>Acreditamos em uma educação que ensina, inspira e transforma. Por isso, o aprendizado acadêmico caminha junto com a autonomia, a convivência e a inteligência emocional.</p>
-        <a class="about-inline-link" href={internalPath('/blog')}>Veja o cotidiano do JJR <span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="about-principles section">
+  <section id="linha-do-tempo" class="story-timeline section" aria-labelledby="timeline-title">
     <div class="shell">
-      <div class="about-section-heading">
-        <span class="eyebrow">O que nos guia</span>
-        <h2>Princípios que aparecem na prática.</h2>
-        <p>Nossa proposta se apoia em valores humanos e éticos, sem vínculo confessional ou religioso.</p>
-      </div>
-      <div class="about-principles-grid">
-        {principles.map((principle) => (
-          <article class="about-principle">
-            <span class="about-principle-number" aria-hidden="true">{principle.number}</span>
-            <h3>{principle.title}</h3>
-            <p>{principle.text}</p>
-          </article>
+      <header class="timeline-heading">
+        <span class="eyebrow">Linha do tempo</span>
+        <h2 id="timeline-title">De um pequeno sonho a uma história compartilhada.</h2>
+        <p>Cada etapa foi construída com alunos, famílias, professores e colaboradores.</p>
+      </header>
+      <ol class="timeline-list">
+        {milestones.map((milestone) => (
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"><span></span></div>
+            <div class="timeline-year" aria-hidden="true">{milestone.year}</div>
+            <article class="timeline-card">
+              <span class="timeline-card-year">{milestone.year} <span>· {milestone.eyebrow}</span></span>
+              <h3>{milestone.title}</h3>
+              {milestone.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </article>
+          </li>
         ))}
+      </ol>
+      <p class="timeline-ending">E a história continua <span aria-hidden="true">↘</span></p>
+    </div>
+  </section>
+
+  <section class="name-section section" aria-labelledby="name-title">
+    <div class="shell name-grid">
+      <div class="name-heading">
+        <span class="eyebrow">A escolha do nome</span>
+        <h2 id="name-title">Por que Jean Jacques Rousseau?</h2>
+        <p class="name-lead">Escolhemos esse nome pelo olhar que Rousseau ajudou a trazer para a infância.</p>
+      </div>
+      <div class="name-copy">
+        <p>Em seu tempo, o pensador propôs que a criança fosse compreendida em sua própria condição, com necessidades, características e tempos próprios — e não apenas como um adulto em formação.</p>
+        <p>Sua contribuição para a educação valorizou a experiência, a curiosidade e o processo de desenvolvimento da criança. Foi esse olhar que nos inspirou. A escolha do nome não significa adesão a todas as suas ideias ou posições históricas.</p>
+        <blockquote>O aluno participa, questiona, experimenta, cria e constrói conhecimentos.</blockquote>
+        <p>É assim que entendemos a aprendizagem: uma experiência ativa, em que cada estudante tem voz e é protagonista da própria caminhada.</p>
       </div>
     </div>
   </section>
 
-  <section class="about-life section">
-    <div class="shell about-life-grid">
-      <figure class="about-life-photo">
+  <section class="learning-section section" aria-labelledby="learning-title">
+    <div class="shell learning-grid">
+      <div class="learning-copy">
+        <span class="eyebrow">Uma escola que continua aprendendo</span>
+        <h2 id="learning-title">Educar também é mudar com o tempo.</h2>
+        <p>A educação nunca esteve pronta para nós. Assim como nossos alunos, aprendemos, mudamos e nos reinventamos.</p>
+        <p>A pandemia trouxe novos desafios e mostrou que era preciso recuperar vínculos, confiança, motivação e sentido para aprender. Nesse caminho, fortalecemos propostas voltadas a uma formação cada vez mais integral.</p>
+        <ul class="learning-paths" aria-label="Propostas educacionais fortalecidas pela escola">
+          {learningPaths.map((path) => <li>{path}</li>)}
+        </ul>
+      </div>
+      <figure class="learning-photo">
         <img src={internalPath('/fotos/home-escada.webp')} alt="Escadaria do Colégio JJR com palavras que representam valores da escola" width="1000" height="1200" loading="lazy" decoding="async" />
       </figure>
-      <div class="about-life-copy">
-        <span class="eyebrow">Nosso jeito de educar</span>
-        <h2>Uma formação para a vida inteira.</h2>
-        <p>Em cada etapa, criamos oportunidades para aprender, conviver e ganhar autonomia. Projetos, leitura, ciência, tecnologia, esporte e experiências em grupo ampliam o que acontece na sala de aula.</p>
-        <p>Da Educação Infantil ao Ensino Médio, respeitamos os desafios de cada fase e mantemos o diálogo com as famílias ao longo do caminho.</p>
-        <div class="about-life-links">
-          <a href={internalPath('/segmentos')}>Conheça os segmentos <span aria-hidden="true">↗</span></a>
-          <a href={internalPath('/estrutura')}>Veja nossos espaços <span aria-hidden="true">↗</span></a>
-        </div>
+    </div>
+  </section>
+
+  <section class="values-section section" aria-labelledby="values-title">
+    <div class="shell values-grid">
+      <div>
+        <span class="eyebrow">O que permanece</span>
+        <h2 id="values-title">Cada aluno é único. Educar é acreditar nisso.</h2>
+      </div>
+      <div class="values-copy">
+        <p>Preparar para a vida é desenvolver conhecimento, autonomia, responsabilidade, criatividade, empatia, perseverança, caráter e a capacidade de fazer escolhas.</p>
+        <p>Nossa história também é atravessada por fé, respeito, amor ao próximo e compromisso com o desenvolvimento integral de cada pessoa. Cada estudante chega com seu tempo, sua história, seus talentos, desafios e possibilidades.</p>
+        <p class="values-emphasis">Por isso, educar é mais do que ensinar. É cuidar, inspirar, desafiar, acompanhar e acreditar.</p>
       </div>
     </div>
   </section>
 
-  <section class="about-visit section">
-    <div class="shell about-visit-inner">
-      <div>
-        <span class="about-visit-label">A escola de perto</span>
-        <h2>O melhor jeito de nos conhecer é estar aqui.</h2>
-        <p>Venha visitar o JJR, conhecer nossos espaços e conversar sobre a próxima etapa da educação da sua família.</p>
+  <section class="closing-section section" aria-labelledby="closing-title">
+    <div class="shell closing-inner">
+      <span class="closing-kicker">Uma história que continua</span>
+      <h2 id="closing-title">Ainda há muitas sementes para florescer.</h2>
+      <p>Seguimos construindo uma escola que valoriza a infância e a juventude, reconhece o estudante como protagonista e entende que conhecimento e valores caminham juntos. Nossa missão vai além de formar bons alunos: queremos contribuir para a formação de boas pessoas, capazes de pensar, escolher, conviver, criar e transformar o mundo ao seu redor.</p>
+      <strong>Aprendendo, ensinando e formando eternos aprendizes.</strong>
+      <div class="closing-actions">
+        <a class="button button-lime" href={internalPath('/contato#visita')}>Venha conhecer a escola</a>
+        <a class="button closing-secondary" href={internalPath('/segmentos')}>Conheça os segmentos</a>
       </div>
-      <a class="button button-lime" href={internalPath('/contato#visita')}>Agendar uma visita</a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .about-hero { background: var(--white); overflow: hidden; }
+  .about-hero { overflow: hidden; background: var(--white); }
   .about-hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(3rem, 7vw, 6rem); padding-block: clamp(3rem, 7vw, 6rem); }
   .about-intro h1 { max-width: 11ch; margin: .6rem 0 1.5rem; font-size: clamp(3rem, 5.2vw, 5.2rem); }
   .about-intro > p:first-of-type { max-width: 47ch; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.18rem); }
   .about-intro > p strong { color: var(--navy); }
+  .story-anchor { display: inline-flex; align-items: center; gap: 1rem; margin-top: 1.5rem; padding: .65rem 0; border-bottom: 2px solid var(--lime-ink); color: var(--navy); font: 800 .85rem/1.3 var(--display); }
+  .story-anchor span { font-size: 1.2rem; }
   .about-location { margin: 3.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font: 700 .75rem/1.6 var(--display); }
   .about-location span { padding-inline: .4rem; color: var(--lime-ink); }
   .about-hero-photo { position: relative; height: min(620px, 54vw); min-height: 460px; margin: 0; }
   .about-hero-photo img { width: 100%; height: 100%; border-radius: 2rem; object-fit: cover; object-position: center 35%; }
   .about-hero-photo figcaption { position: absolute; left: -1.5rem; bottom: 1.5rem; max-width: 16rem; padding: 1.25rem 1.5rem; border-radius: 1rem; color: var(--navy); background: var(--lime); box-shadow: 0 12px 30px rgb(6 22 55 / 14%); font: 800 1rem/1.35 var(--display); }
-  .about-story { border-top: 1px solid var(--line); background: var(--paper); }
-  .about-story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(3rem, 8vw, 8rem); }
-  .about-story-title h2 { max-width: 12ch; margin-bottom: 0; }
-  .about-story-copy { padding-top: .3rem; }
-  .about-story-copy p { color: var(--muted); font-size: 1.1rem; }
-  .about-story-copy p:first-child { color: var(--navy); font-size: 1.2rem; font-weight: 600; }
-  .about-inline-link, .about-life-links a { display: inline-flex; align-items: center; gap: .6rem; padding-bottom: .2rem; border-bottom: 2px solid var(--lime-ink); color: var(--navy); font: 800 .85rem/1.4 var(--display); }
-  .about-inline-link { margin-top: 1rem; }
-  .about-inline-link:hover, .about-life-links a:hover { border-color: var(--amber); }
-  .about-principles { background: var(--soft); }
-  .about-section-heading { max-width: 700px; margin-bottom: 3rem; }
-  .about-section-heading h2 { max-width: 14ch; margin-bottom: 1rem; }
-  .about-section-heading p { color: var(--muted); font-size: 1.05rem; }
-  .about-principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #bdc8cf; }
-  .about-principle { padding: 2rem 2rem 0 0; }
-  .about-principle + .about-principle { padding-left: 2rem; border-left: 1px solid #bdc8cf; }
-  .about-principle-number { color: var(--lime-ink); font: 800 .8rem/1 var(--display); }
-  .about-principle h3 { margin: 2.5rem 0 .85rem; }
-  .about-principle p { max-width: 35ch; margin-bottom: 0; color: var(--muted); font-size: .95rem; }
-  .about-life { background: var(--white); }
-  .about-life-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(3rem, 8vw, 8rem); }
-  .about-life-photo { height: 540px; margin: 0; overflow: hidden; border-radius: 2rem; }
-  .about-life-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-  .about-life-copy h2 { max-width: 13ch; }
-  .about-life-copy p { color: var(--muted); font-size: 1.05rem; }
-  .about-life-links { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
-  .about-visit { background: var(--navy); color: white; }
-  .about-visit-inner { display: flex; align-items: end; justify-content: space-between; gap: 3rem; }
-  .about-visit-inner h2 { max-width: 16ch; margin: .8rem 0 1rem; color: white; }
-  .about-visit-inner p { max-width: 55ch; margin-bottom: 0; color: #c4cfe2; }
-  .about-visit-inner .button { flex: none; }
-  .about-visit-label { color: var(--lime); font: 800 .82rem/1 var(--display); }
+  .story-timeline { overflow: hidden; background: var(--paper); scroll-margin-top: 78px; }
+  .timeline-heading { max-width: 700px; margin-bottom: clamp(3rem, 8vw, 6rem); }
+  .timeline-heading h2 { max-width: 15ch; margin-bottom: 1rem; }
+  .timeline-heading p { color: var(--muted); font-size: 1.06rem; }
+  .timeline-list { position: relative; display: grid; gap: clamp(2rem, 5vw, 4rem); margin: 0; padding: 0 0 0 1rem; list-style: none; }
+  .timeline-list::before { content: ''; position: absolute; top: 1.4rem; bottom: 0; left: 50%; width: 2px; background: #bfd3b0; transform: translateX(-50%); }
+  .timeline-item { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 8vw, 8rem); align-items: center; }
+  .timeline-marker { position: absolute; z-index: 2; top: 50%; left: 50%; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); transform: translate(-50%, -50%); box-shadow: 0 0 0 7px var(--paper); }
+  .timeline-marker span { width: 7px; height: 7px; border-radius: 50%; background: var(--navy); }
+  .timeline-year { justify-self: end; color: #d7e7c4; font: 800 clamp(5rem, 10vw, 9rem)/1 var(--display); letter-spacing: -.09em; }
+  .timeline-card { max-width: 480px; padding: clamp(1.6rem, 3vw, 2.4rem); border: 1px solid var(--line); border-top: 5px solid var(--lime); border-radius: 1.4rem; background: white; box-shadow: 0 12px 35px rgb(6 22 55 / 5%); }
+  .timeline-card-year { display: block; margin-bottom: 1rem; color: var(--lime-ink); font: 800 .8rem/1.4 var(--display); }
+  .timeline-card-year span { color: var(--muted); }
+  .timeline-card h3 { margin-bottom: .9rem; font-size: clamp(1.4rem, 2vw, 1.8rem); }
+  .timeline-card p { margin-bottom: .8rem; color: var(--muted); font-size: .95rem; }
+  .timeline-card p:last-child { margin-bottom: 0; }
+  .timeline-item:nth-child(even) .timeline-year { grid-column: 2; grid-row: 1; justify-self: start; }
+  .timeline-item:nth-child(even) .timeline-card { grid-column: 1; grid-row: 1; justify-self: end; }
+  .timeline-ending { position: relative; width: max-content; margin: 3rem auto 0; padding: .75rem 1rem; border-radius: 999px; color: var(--navy); background: var(--lime); font: 800 .8rem/1 var(--display); }
+  .timeline-ending span { margin-left: .4rem; }
+  .name-section { background: white; }
+  .name-grid, .values-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(3rem, 8vw, 8rem); }
+  .name-heading h2 { max-width: 13ch; }
+  .name-lead { max-width: 29ch; color: var(--lime-ink); font: 700 clamp(1.2rem, 2vw, 1.5rem)/1.4 var(--display); }
+  .name-copy p, .values-copy p { color: var(--muted); font-size: 1.05rem; }
+  .name-copy blockquote { margin: 2.5rem 0; padding: 1.5rem 0 1.5rem 1.5rem; border-left: 5px solid var(--lime); color: var(--navy); font: 800 clamp(1.4rem, 2.4vw, 2rem)/1.35 var(--display); }
+  .learning-section { background: var(--soft); }
+  .learning-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(3rem, 8vw, 8rem); }
+  .learning-copy h2 { max-width: 12ch; }
+  .learning-copy p { color: var(--muted); font-size: 1.05rem; }
+  .learning-photo { height: 620px; margin: 0; overflow: hidden; border-radius: 2rem; }
+  .learning-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .learning-paths { display: flex; flex-wrap: wrap; gap: .65rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+  .learning-paths li { padding: .55rem .85rem; border: 1px solid #b8c7cb; border-radius: 999px; color: var(--navy); background: white; font: 700 .75rem/1.3 var(--display); }
+  .values-section { background: white; }
+  .values-grid h2 { max-width: 13ch; }
+  .values-emphasis { padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--navy) !important; font: 700 clamp(1.2rem, 2vw, 1.5rem)/1.4 var(--display); }
+  .closing-section { color: white; background: var(--navy); }
+  .closing-inner { max-width: 900px; text-align: center; }
+  .closing-kicker { color: var(--lime); font: 800 .8rem/1 var(--display); }
+  .closing-inner h2 { max-width: 17ch; margin: 1rem auto 1.5rem; color: white; }
+  .closing-inner p { margin-inline: auto; color: #c4cfe2; font-size: 1.06rem; }
+  .closing-inner strong { display: block; margin-top: 2rem; color: white; font: 800 clamp(1.2rem, 2vw, 1.5rem)/1.4 var(--display); }
+  .closing-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2.5rem; }
+  .closing-secondary { border: 1px solid rgb(255 255 255 / 40%); color: white; }
   @media (max-width: 900px) {
-    .about-hero-grid, .about-story-grid, .about-life-grid { grid-template-columns: 1fr; }
+    .about-hero-grid, .name-grid, .learning-grid, .values-grid { grid-template-columns: 1fr; }
     .about-hero-photo { height: 520px; min-height: 0; }
     .about-hero-photo figcaption { left: 1rem; }
     .about-location { margin-top: 2.5rem; }
-    .about-story-title h2, .about-life-copy h2 { max-width: 18ch; }
-    .about-life-photo { height: 480px; }
+    .learning-photo { max-width: 600px; height: 500px; }
+  }
+  @media (max-width: 700px) {
+    .timeline-list { gap: 1.4rem; padding-left: 0; }
+    .timeline-list::before { left: 10px; }
+    .timeline-item { display: block; padding-left: 2.5rem; }
+    .timeline-marker { top: 1.6rem; left: 10px; transform: translate(-50%, 0); }
+    .timeline-year { display: none; }
+    .timeline-card { max-width: none; }
+    .timeline-ending { margin-left: 0; }
   }
   @media (max-width: 620px) {
     .about-hero-grid { gap: 2.5rem; padding-block: 3.5rem; }
     .about-intro h1 { font-size: clamp(2.7rem, 11vw, 4rem); }
     .about-hero-photo { height: 440px; }
-    .about-hero-photo img, .about-life-photo { border-radius: 1.5rem; }
-    .about-principles-grid { grid-template-columns: 1fr; }
-    .about-principle, .about-principle + .about-principle { padding: 1.5rem 0; border-left: 0; border-bottom: 1px solid #bdc8cf; }
-    .about-principle h3 { margin: 1rem 0 .65rem; }
-    .about-life-photo { height: 380px; }
-    .about-visit-inner { display: block; }
-    .about-visit-inner .button { margin-top: 2rem; }
+    .about-hero-photo img, .learning-photo { border-radius: 1.5rem; }
+    .learning-photo { height: 400px; }
+    .timeline-card { padding: 1.5rem; }
+    .name-copy blockquote { font-size: 1.4rem; }
   }
 </style>
