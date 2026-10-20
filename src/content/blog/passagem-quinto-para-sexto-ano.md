@@ -1,5 +1,6 @@
 ---
 title: "Do 5º para o 6º ano: o que observar na escolha da escola?"
+seoTitle: "Do 5º para o 6º ano: como escolher? | Colégio JJR"
 description: "Um roteiro para conversar sobre autonomia, rotina de estudos e acompanhamento na entrada do Fundamental II em 2027."
 publishedAt: 2026-10-03
 category: "Etapas de Ensino"

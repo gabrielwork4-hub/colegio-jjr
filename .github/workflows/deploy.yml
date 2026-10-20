@@ -1,4 +1,4 @@
-name: Publicar site temporário no GitHub Pages
+name: Publicar site no GitHub Pages
 
 on:
   push:
@@ -22,8 +22,6 @@ jobs:
         uses: actions/checkout@v7
       - name: Compilar e enviar artefato
         uses: withastro/action@v6
-        env:
-          DEPLOY_TARGET: github-pages
 
   deploy:
     needs: build

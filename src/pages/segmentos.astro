@@ -34,7 +34,7 @@ const segments = [
 ];
 ---
 
-<BaseLayout title="Segmentos | Colégio Jean Jacques Rousseau" description="Educação Infantil, Ensino Fundamental I e II e Ensino Médio no Colégio Jean Jacques Rousseau, com formação integral e acompanhamento próximo.">
+<BaseLayout title="Etapas de ensino no Rio Pequeno | Colégio JJR" description="Conheça a Educação Infantil, o Fundamental I e II e o Ensino Médio do Colégio JJR, no Rio Pequeno, com acompanhamento próximo em cada etapa.">
   <header class="page-hero"><div class="shell"><span class="eyebrow">Uma jornada completa</span><h1>Cada fase pede um jeito de ensinar.</h1><p>Do primeiro passo à escolha da profissão, respeitamos o ritmo e as potencialidades de cada etapa.</p></div></header>
   <section class="section-tight"><div class="shell segment-list">
     {segments.map((segment) => (
@@ -44,4 +44,10 @@ const segments = [
       </article>
     ))}
   </div></section>
+  <section class="section-tight" aria-labelledby="segment-visit-title">
+    <div class="shell segment-cta">
+      <div><span class="eyebrow">Conheça o JJR</span><h2 id="segment-visit-title">Descubra de perto a etapa do seu filho.</h2><p>Converse com a equipe sobre a rotina, a proposta pedagógica e as possibilidades para 2027.</p></div>
+      <div class="hero-actions"><a class="button button-lime" href={internalPath('/matriculas-2027/')}>Informações de matrícula</a><a class="button campaign-ghost" href={internalPath('/contato#visita')}>Agendar uma visita</a></div>
+    </div>
+  </section>
 </BaseLayout>

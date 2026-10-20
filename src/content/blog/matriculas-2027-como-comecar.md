@@ -1,5 +1,6 @@
 ---
 title: "Matrículas 2027 no Colégio Jean Jacques Rousseau: como começar?"
+seoTitle: "Matrículas 2027: como começar? | Colégio JJR"
 description: "Saiba como manifestar interesse, visitar a escola e receber orientações sobre vagas para 2027 no Colégio Jean Jacques Rousseau."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"

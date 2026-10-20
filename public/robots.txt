@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://colegiojjr.com.br/sitemap-index.xml
+Sitemap: https://www.colegiojjr.com.br/sitemap-index.xml

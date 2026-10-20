@@ -6,6 +6,7 @@ const blog = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
+    seoTitle: z.string().optional(),
     description: z.string(),
     publishedAt: z.coerce.date(),
     category: z.enum(['Eventos & Comunidade', 'Práticas Pedagógicas', 'Tecnologia & Inovação', 'Matrículas & Escolha', 'Vida Escolar', 'Etapas de Ensino']),

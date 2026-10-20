@@ -1,5 +1,6 @@
 ---
 title: "Escolas no Rio Pequeno e Butantã: como comparar as opções?"
+seoTitle: "Comparar escolas no Rio Pequeno e Butantã | Colégio JJR"
 description: "Um roteiro para comparar escolas da região com atenção à proposta pedagógica, rotina, deslocamento e atendimento."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"

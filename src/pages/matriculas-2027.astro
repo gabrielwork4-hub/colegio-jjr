@@ -78,20 +78,52 @@ const faqs = [
         <p>Preencha os dados essenciais. A equipe do JJR entrará em contato para orientar sua família.</p>
         <p class="form-assurance">Este cadastro não confirma nem reserva uma vaga.</p>
       </div>
-      <form class="form-card" name="matriculas-2027" method="post" data-netlify="true">
-        <input type="hidden" name="form-name" value="matriculas-2027" />
+      <form class="form-card" data-whatsapp-lead data-whatsapp-base={whatsappLink('Olá! Tenho interesse nas matrículas 2027 do Colégio JJR.')}>
         <div class="field"><label for="responsavel">Nome do responsável</label><input id="responsavel" name="responsavel" autocomplete="name" required /></div>
         <div class="field-grid">
           <div class="field"><label for="telefone-2027">WhatsApp</label><input id="telefone-2027" name="telefone" type="tel" autocomplete="tel" required /></div>
-          <div class="field"><label for="email-2027">E-mail</label><input id="email-2027" name="email" type="email" autocomplete="email" required /></div>
+          <div class="field"><label for="email-2027">E-mail (opcional)</label><input id="email-2027" name="email" type="email" autocomplete="email" /></div>
         </div>
         <div class="field"><label for="aluno">Nome do estudante</label><input id="aluno" name="aluno" required /></div>
         <div class="field-grid">
-          <div class="field"><label for="segmento-2027">Segmento</label><select id="segmento-2027" name="segmento" required><option value="">Selecione</option><option>Educação Infantil</option><option>Ensino Fundamental I</option><option>Ensino Fundamental II</option><option>Ensino Médio</option></select></div>
-          <div class="field"><label for="serie">Série pretendida</label><input id="serie" name="serie" required /></div>
+          <div class="field"><label for="segmento-2027">Segmento</label><select id="segmento-2027" name="segmento" data-segment-select required><option value="">Selecione</option><option>Educação Infantil</option><option>Ensino Fundamental I</option><option>Ensino Fundamental II</option><option>Ensino Médio</option></select></div>
+          <div class="field"><label for="serie">Série pretendida</label><select id="serie" name="serie" data-grade-select required disabled><option value="">Escolha o segmento primeiro</option></select></div>
         </div>
-        <button class="button button-navy" type="submit">Quero receber informações</button>
+        <button class="button button-navy" type="submit">Continuar no WhatsApp</button>
+        <p class="form-assurance" data-form-status aria-live="polite">O WhatsApp abrirá com os dados preenchidos. Você poderá revisar a mensagem antes de enviá-la.</p>
       </form>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const gradeOptions: Record<string, string[]> = {
+    'Educação Infantil': ['Berçário', 'Maternal', 'Jardim I', 'Jardim II'],
+    'Ensino Fundamental I': ['1º ano', '2º ano', '3º ano', '4º ano', '5º ano'],
+    'Ensino Fundamental II': ['6º ano', '7º ano', '8º ano', '9º ano'],
+    'Ensino Médio': ['1ª série', '2ª série', '3ª série'],
+  };
+
+  document.querySelectorAll<HTMLFormElement>('[data-whatsapp-lead]').forEach((form) => {
+    const segment = form.querySelector<HTMLSelectElement>('[data-segment-select]');
+    const grade = form.querySelector<HTMLSelectElement>('[data-grade-select]');
+    segment?.addEventListener('change', () => {
+      if (!grade || !segment) return;
+      grade.replaceChildren(new Option('Selecione a série', ''));
+      (gradeOptions[segment.value] || []).forEach((label) => grade.add(new Option(label, label)));
+      grade.disabled = !gradeOptions[segment.value];
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const fields = new FormData(form);
+      const details = [...fields.entries()]
+        .filter(([, value]) => String(value).trim())
+        .map(([key, value]) => `*${key[0].toUpperCase()}${key.slice(1)}:* ${String(value).trim()}`);
+      const intro = decodeURIComponent(form.dataset.whatsappBase!.split('?text=')[1] || '');
+      const message = `${intro}\n\n${details.join('\n')}`;
+      window.location.href = `${form.dataset.whatsappBase!.split('?')[0]}?text=${encodeURIComponent(message)}`;
+    });
+  });
+</script>

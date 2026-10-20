@@ -1,0 +1,19 @@
+# Colégio Jean Jacques Rousseau
+
+> Site oficial do Colégio Jean Jacques Rousseau (Colégio JJR), escola localizada no Rio Pequeno, São Paulo.
+
+Este arquivo aponta para páginas públicas do site. Use as próprias páginas como fonte para informações atuais e não infira dados que não estejam publicados nelas.
+
+## Páginas principais
+
+- [Página inicial](https://www.colegiojjr.com.br/): apresentação da escola e acesso às principais áreas.
+- [Sobre o Colégio JJR](https://www.colegiojjr.com.br/sobre-nos/): história, princípios e proposta da escola.
+- [Segmentos de ensino](https://www.colegiojjr.com.br/segmentos/): etapas de ensino oferecidas.
+- [Estrutura](https://www.colegiojjr.com.br/estrutura/): ambientes e espaços da escola.
+- [Matrículas 2027](https://www.colegiojjr.com.br/matriculas-2027/): informações da campanha de matrícula de 2027.
+- [Contato e visitas](https://www.colegiojjr.com.br/contato/): canais de contato e localização.
+
+## Conteúdo para famílias
+
+- [Blog do Colégio JJR](https://www.colegiojjr.com.br/blog/): artigos e guias para famílias.
+- [Sitemap XML](https://www.colegiojjr.com.br/sitemap-index.xml): URLs públicas canônicas do site.

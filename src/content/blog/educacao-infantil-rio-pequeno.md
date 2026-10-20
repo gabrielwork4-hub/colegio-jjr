@@ -1,5 +1,6 @@
 ---
 title: "Educação Infantil no Rio Pequeno: o que observar na escolha?"
+seoTitle: "Educação Infantil no Rio Pequeno | Colégio JJR"
 description: "Critérios práticos para visitar uma escola de Educação Infantil no Rio Pequeno e comparar propostas para 2027."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"

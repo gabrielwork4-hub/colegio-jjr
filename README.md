@@ -18,6 +18,7 @@ Os artigos ficam em `src/content/blog`. Cada arquivo Markdown aceita:
 
 ```yaml
 title: "Título do artigo"
+seoTitle: "Título curto para busca | Colégio JJR"
 description: "Resumo para cards e mecanismos de busca"
 publishedAt: 2026-09-08
 category: "Práticas Pedagógicas"
@@ -28,7 +29,7 @@ featured: false
 draft: false
 ```
 
-Categorias aceitas: `Eventos & Comunidade`, `Práticas Pedagógicas` e `Tecnologia & Inovação`.
+`seoTitle` é opcional e permite um título curto para resultados de busca sem alterar o título visível do artigo. Categorias aceitas: `Eventos & Comunidade`, `Práticas Pedagógicas`, `Tecnologia & Inovação`, `Matrículas & Escolha`, `Vida Escolar` e `Etapas de Ensino`.
 
 ## Estrutura
 
@@ -44,19 +45,14 @@ O painel do Decap CMS fica em `/admin/`. Para testar localmente, mantenha
 `npm run dev` aberto em um terminal e execute `npm run cms` em outro. Depois,
 acesse `http://127.0.0.1:4321/admin/`.
 
-Em produção, o painel usa o Git Gateway da Netlify. Para ativá-lo:
+O site público será publicado no GitHub Pages, com DNS do domínio no Cloudflare. A publicação do site e o painel editorial são fluxos distintos: o painel atual usa Netlify Identity e Git Gateway, que não estão configurados no GitHub Pages. O painel não deve ser usado em produção até definirmos e configurarmos um backend editorial compatível.
 
-1. Importe este repositório para um site Netlify.
-2. Em **Identity**, habilite o Identity e convide os editores autorizados.
-3. Em **Identity > Services**, habilite o Git Gateway e autorize o acesso ao
-   repositório GitHub.
-4. Faça login em `/admin/` com o convite recebido. Publicações aprovadas pelo
-   painel criam commits no branch `main` e acionam uma nova publicação do site.
+O arquivo [DEPLOY-GITHUB-CLOUDFLARE.md](DEPLOY-GITHUB-CLOUDFLARE.md) contém a configuração de domínio e os critérios para validar a publicação.
 
 Nenhuma credencial é armazenada neste projeto.
 
 ## Observações de produção
 
-- As imagens atuais usam as referências do protótipo Stitch e devem ser substituídas pelo acervo definitivo do colégio.
-- O formulário usa Netlify Forms e é detectado durante a primeira publicação na Netlify.
-- Atualize o domínio em `astro.config.mjs` antes da publicação, se necessário.
+- O domínio canônico configurado no build é `https://www.colegiojjr.com.br/`.
+- O sitemap XML é gerado em `sitemap-index.xml`; `robots.txt` aponta para ele e `llms.txt` lista as rotas públicas principais.
+- A imagem do Ensino Fundamental II ainda está hospedada externamente e precisa ser substituída por uma imagem aprovada do acervo escolar.

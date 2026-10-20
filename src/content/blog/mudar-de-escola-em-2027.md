@@ -1,5 +1,6 @@
 ---
 title: "Mudar de escola em 2027: como organizar a decisão da família?"
+seoTitle: "Mudar de escola em 2027: como decidir? | Colégio JJR"
 description: "Veja o que comparar, perguntar e preparar ao considerar uma nova escola para o ano letivo de 2027."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"

@@ -1,5 +1,6 @@
 ---
 title: "O que é projeto pedagógico e como avaliá-lo na escolha da escola?"
+seoTitle: "Projeto pedagógico: como avaliar uma escola | Colégio JJR"
 description: "Entenda como olhar além do discurso e pedir exemplos da proposta pedagógica na rotina escolar."
 publishedAt: 2026-10-03
 category: "Práticas Pedagógicas"

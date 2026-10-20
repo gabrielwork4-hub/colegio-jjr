@@ -1,5 +1,6 @@
 ---
 title: "Entrada no Ensino Fundamental I: o que muda para a criança?"
+seoTitle: "Entrada no Fundamental I: o que muda? | Colégio JJR"
 description: "Veja como conversar sobre rotina, alfabetização e autonomia na passagem da Educação Infantil para o Fundamental I."
 publishedAt: 2026-10-03
 category: "Etapas de Ensino"

@@ -1,7 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { assetPath } from '../../utils/site';
+import { assetPath, internalPath } from '../../utils/site';
 import { school } from '../../utils/school';
 
 export async function getStaticPaths() {
@@ -12,8 +12,22 @@ export async function getStaticPaths() {
 interface Props { post: CollectionEntry<'blog'> }
 const { post } = Astro.props;
 const { Content } = await render(post);
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const relatedPosts = allPosts
+  .filter((candidate) => candidate.id !== post.id && candidate.data.category === post.data.category)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+const suggestions = relatedPosts.length >= 3
+  ? []
+  : allPosts
+      .filter((candidate) => candidate.id !== post.id && !relatedPosts.some((related) => related.id === candidate.id))
+      .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+      .slice(0, 3 - relatedPosts.length);
+const recommendedPosts = [...relatedPosts, ...suggestions];
 const date = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(post.data.publishedAt);
-const pageTitle = post.data.title.includes(school.name) ? post.data.title : `${post.data.title} | ${school.name}`;
+const titleForSearch = post.data.seoTitle?.trim() || post.data.title;
+const hasSchoolName = titleForSearch.includes(school.name) || titleForSearch.includes(school.shortName);
+const pageTitle = hasSchoolName ? titleForSearch : `${titleForSearch} | ${school.shortName}`;
 ---
 
 <BaseLayout
@@ -29,4 +43,20 @@ const pageTitle = post.data.title.includes(school.name) ? post.data.title : `${p
     ? <img class="post-hero-image" src={assetPath(post.data.image)} alt={post.data.imageAlt} />
     : <div class="post-hero-placeholder" aria-hidden="true"><span>JJR</span><small>Guia para famílias</small></div>}
   <article class="prose"><Content /><p><em>{post.data.author}</em></p></article>
+  <section class="section-tight article-next-steps" aria-label="Continue sua leitura">
+    <div class="shell">
+      <div class="article-cta">
+        <div><span class="eyebrow">Conheça o Colégio JJR</span><h2>Quer conhecer nossa proposta de perto?</h2><p>Agende uma visita e converse com a equipe sobre a etapa e a rotina do seu filho.</p></div>
+        <a class="button button-lime" href={internalPath('/contato/')}>Agendar uma visita</a>
+      </div>
+      {recommendedPosts.length > 0 && <div class="article-related">
+        <h2>Continue lendo</h2>
+        <div class="article-related-grid">
+          {recommendedPosts.map((related) => <article class="card article-related-card">
+            <div class="card-body"><span class="post-meta">{related.data.category}</span><h3><a href={internalPath(`/blog/${related.id}/`)}>{related.data.title}</a></h3><p>{related.data.description}</p><a class="text-link" href={internalPath(`/blog/${related.id}/`)}>Ler artigo</a></div>
+          </article>)}
+        </div>
+      </div>}
+    </div>
+  </section>
 </BaseLayout>

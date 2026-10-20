@@ -1,5 +1,6 @@
 ---
 title: "Como escolher a escola do seu filho? 12 perguntas para a visita"
+seoTitle: "12 perguntas para visitar uma escola | Colégio JJR"
 description: "Leve estas 12 perguntas para entender a rotina, a proposta pedagógica e o acompanhamento antes de escolher uma escola."
 publishedAt: 2026-10-03
 category: "Matrículas & Escolha"

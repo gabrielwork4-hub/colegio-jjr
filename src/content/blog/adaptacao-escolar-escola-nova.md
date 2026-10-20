@@ -1,5 +1,6 @@
 ---
 title: "Adaptação escolar: como preparar a chegada a uma escola nova?"
+seoTitle: "Adaptação escolar: prepare seu filho | Colégio JJR"
 description: "Um guia para conversar com a criança e com a escola antes das primeiras semanas de uma nova rotina em 2027."
 publishedAt: 2026-10-03
 category: "Vida Escolar"
