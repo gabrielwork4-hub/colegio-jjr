@@ -32,7 +32,7 @@ const {
   faqs,
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://colegiojjr.com.br');
+const siteUrl = Astro.site ?? new URL('https://www.colegiojjr.com.br');
 const canonical = new URL(Astro.url.pathname, siteUrl);
 const absoluteImage = new URL(image, siteUrl);
 const pageName = title.split(' | ')[0];

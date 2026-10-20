@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  // Use the apex domain as the canonical production origin.
-  site: 'https://colegiojjr.com.br',
+  // Use the www host as the canonical production origin.
+  site: 'https://www.colegiojjr.com.br',
   output: 'static',
   trailingSlash: 'always',
   integrations: [
