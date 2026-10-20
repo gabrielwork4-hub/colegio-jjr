@@ -45,7 +45,7 @@ O painel do Decap CMS fica em `/admin/`. Para testar localmente, mantenha
 `npm run dev` aberto em um terminal e execute `npm run cms` em outro. Depois,
 acesse `http://127.0.0.1:4321/admin/`.
 
-O site público será publicado no GitHub Pages, com DNS do domínio no Cloudflare. A publicação do site e o painel editorial são fluxos distintos: o painel atual usa Netlify Identity e Git Gateway, que não estão configurados no GitHub Pages. O painel não deve ser usado em produção até definirmos e configurarmos um backend editorial compatível.
+O site público é publicado no Cloudflare Pages a partir do repositório GitHub. O domínio canônico é `https://colegiojjr.com.br/`; o host `www` deve redirecionar para ele. A publicação do site e o painel editorial são fluxos distintos: o painel atual usa Netlify Identity e Git Gateway, que não estão configurados no Cloudflare Pages. O painel não deve ser usado em produção até definirmos e configurarmos um backend editorial compatível.
 
 O arquivo [DEPLOY-GITHUB-CLOUDFLARE.md](DEPLOY-GITHUB-CLOUDFLARE.md) contém a configuração de domínio e os critérios para validar a publicação.
 
@@ -53,6 +53,6 @@ Nenhuma credencial é armazenada neste projeto.
 
 ## Observações de produção
 
-- O domínio canônico configurado no build é `https://www.colegiojjr.com.br/`.
+- O domínio canônico configurado no build é `https://colegiojjr.com.br/`; `www` redireciona para o domínio raiz.
 - O sitemap XML é gerado em `sitemap-index.xml`; `robots.txt` aponta para ele e `llms.txt` lista as rotas públicas principais.
 - A imagem do Ensino Fundamental II ainda está hospedada externamente e precisa ser substituída por uma imagem aprovada do acervo escolar.

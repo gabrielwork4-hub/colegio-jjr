@@ -5,8 +5,8 @@ backend:
 media_folder: public/uploads
 public_folder: /uploads
 
-site_url: https://www.colegiojjr.com.br
-display_url: https://www.colegiojjr.com.br
+site_url: https://colegiojjr.com.br
+display_url: https://colegiojjr.com.br
 
 collections:
   - name: blog
