@@ -16,7 +16,7 @@ export const school = {
   legalName: 'Colégio Jean Jacques Rousseau Ltda ME',
 
   phone: { label: '(11) 3714-4206', href: 'tel:+551137144206', e164: '+55 11 3714-4206' },
-  whatsapp: { label: '(11) 95735-3127', href: 'https://wa.me/5511957353127' },
+  whatsapp: { label: '(11) 95735-3124', href: 'https://wa.me/5511957353124' },
   email: 'colegiojeanjr@yahoo.com.br',
   instagram: 'https://www.instagram.com/colegio.jjr/',
   facebook: 'https://web.facebook.com/colegioJJR?_rdc=1&_rdr#',
