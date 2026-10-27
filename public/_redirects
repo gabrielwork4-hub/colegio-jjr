@@ -1,0 +1,9 @@
+# URLs migradas do site anterior. Cada origem aponta diretamente para a página
+# pública equivalente no site atual, sem acrescentar etapas à cadeia de redirecionamento.
+/fique-por-dentro/  /blog/       301
+/sobre-a-escola/    /sobre-nos/  301
+/proposta-pedagogica/ /sobre-nos/ 301
+/instalacoes/       /estrutura/  301
+/ensino-fundamental-1/ /segmentos/ 301
+/ensino-fundamental-2/ /segmentos/ 301
+/ensino-medio/      /segmentos/  301
