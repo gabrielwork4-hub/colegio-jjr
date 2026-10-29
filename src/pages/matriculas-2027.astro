@@ -9,6 +9,9 @@ const reasons = [
   ['Futuro em perspectiva', 'Conhecimento, educação financeira, inovação e projeto de vida.'],
 ];
 
+const segments = ['Educação Infantil', 'Ensino Fundamental I', 'Ensino Fundamental II', 'Ensino Médio'];
+const shifts = ['Manhã', 'Tarde', 'Integral'];
+
 const faqs = [
   ['Quais segmentos terão matrículas para 2027?', 'O atendimento contempla Educação Infantil, Ensino Fundamental I, Ensino Fundamental II e Ensino Médio. A disponibilidade de vagas é confirmada pela equipe para cada turma.'],
   ['O colégio oferece período integral?', 'Sim. O Colégio JJR trabalha com turnos da manhã e da tarde e também com período integral, conforme o segmento e a disponibilidade.'],
@@ -78,19 +81,39 @@ const faqs = [
         <p>Preencha os dados essenciais. A equipe do JJR entrará em contato para orientar sua família.</p>
         <p class="form-assurance">Este cadastro não confirma nem reserva uma vaga.</p>
       </div>
-      <form class="form-card" data-whatsapp-lead data-whatsapp-base={whatsappLink('Olá! Tenho interesse nas matrículas 2027 do Colégio JJR.')}>
+      <form class="form-card enrollment-contact-form" id="matriculas-2027" data-whatsapp-base={whatsappLink('Olá! Tenho interesse nas matrículas 2027 do Colégio JJR.')}>
+        <p class="form-intro">Em poucos passos, direcionamos você para uma conversa com a equipe.</p>
         <div class="field"><label for="responsavel">Nome do responsável</label><input id="responsavel" name="responsavel" autocomplete="name" required /></div>
         <div class="field-grid">
           <div class="field"><label for="telefone-2027">WhatsApp</label><input id="telefone-2027" name="telefone" type="tel" autocomplete="tel" required /></div>
           <div class="field"><label for="email-2027">E-mail (opcional)</label><input id="email-2027" name="email" type="email" autocomplete="email" /></div>
         </div>
         <div class="field"><label for="aluno">Nome do estudante</label><input id="aluno" name="aluno" required /></div>
+        <fieldset class="choice-fieldset">
+          <legend>Qual segmento procura?</legend>
+          <div class="choice-grid">
+            {segments.map((segment) => <label class="choice-card"><input type="radio" name="segmento" value={segment} required /><span>{segment}</span></label>)}
+          </div>
+        </fieldset>
         <div class="field-grid">
-          <div class="field"><label for="segmento-2027">Segmento</label><select id="segmento-2027" name="segmento" data-segment-select required><option value="">Selecione</option><option>Educação Infantil</option><option>Ensino Fundamental I</option><option>Ensino Fundamental II</option><option>Ensino Médio</option></select></div>
           <div class="field"><label for="serie">Série pretendida</label><select id="serie" name="serie" data-grade-select required disabled><option value="">Escolha o segmento primeiro</option></select></div>
+          <fieldset class="choice-fieldset compact-choice-fieldset">
+            <legend>Turno de interesse</legend>
+            <div class="choice-grid choice-grid-compact">
+              {shifts.map((shift) => <label class="choice-card"><input type="radio" name="turno" value={shift} required /><span>{shift}</span></label>)}
+            </div>
+          </fieldset>
         </div>
+        <fieldset class="choice-fieldset compact-choice-fieldset">
+          <legend>Como podemos ajudar?</legend>
+          <div class="choice-grid choice-grid-compact">
+            <label class="choice-card"><input type="radio" name="interesse" value="Receber valores e condições" required /><span>Valores e condições</span></label>
+            <label class="choice-card"><input type="radio" name="interesse" value="Agendar uma visita" required /><span>Agendar visita</span></label>
+            <label class="choice-card"><input type="radio" name="interesse" value="Tirar dúvidas" required /><span>Tirar dúvidas</span></label>
+          </div>
+        </fieldset>
+        <p class="form-disclosure">Ao continuar, abriremos uma conversa no WhatsApp com seus dados preenchidos para revisão. O envio da mensagem só acontece se você confirmar no WhatsApp.</p>
         <button class="button button-navy" type="submit">Continuar no WhatsApp</button>
-        <p class="form-assurance" data-form-status aria-live="polite">O WhatsApp abrirá com os dados preenchidos. Você poderá revisar a mensagem antes de enviá-la.</p>
       </form>
     </div>
   </section>
@@ -104,26 +127,54 @@ const faqs = [
     'Ensino Médio': ['1ª série', '2ª série', '3ª série'],
   };
 
-  document.querySelectorAll<HTMLFormElement>('[data-whatsapp-lead]').forEach((form) => {
-    const segment = form.querySelector<HTMLSelectElement>('[data-segment-select]');
-    const grade = form.querySelector<HTMLSelectElement>('[data-grade-select]');
-    segment?.addEventListener('change', () => {
-      if (!grade || !segment) return;
+  const form = document.querySelector<HTMLFormElement>('#matriculas-2027');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const values = new FormData(form);
+    const message = [
+      'Olá! Vim pelo site e gostaria de receber informações sobre as Matrículas 2027.',
+      '',
+      `Responsável: ${values.get('responsavel')}`,
+      `Estudante: ${values.get('aluno')}`,
+      `Segmento: ${values.get('segmento')}`,
+      `Série pretendida: ${values.get('serie')}`,
+      `Turno de interesse: ${values.get('turno')}`,
+      `Quero: ${values.get('interesse')}`,
+      `Telefone: ${values.get('telefone')}`,
+      `E-mail: ${values.get('email') || 'Não informado'}`,
+    ].join('\\n');
+
+    const baseUrl = form.dataset.whatsappBase?.split('?')[0];
+    if (baseUrl) window.location.href = `${baseUrl}?text=${encodeURIComponent(message)}`;
+  });
+
+  form?.querySelectorAll<HTMLInputElement>('[name="segmento"]').forEach((segment) => {
+    const grade = form?.querySelector<HTMLSelectElement>('[data-grade-select]');
+    segment.addEventListener('change', () => {
+      if (!grade) return;
       grade.replaceChildren(new Option('Selecione a série', ''));
       (gradeOptions[segment.value] || []).forEach((label) => grade.add(new Option(label, label)));
       grade.disabled = !gradeOptions[segment.value];
     });
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-      const fields = new FormData(form);
-      const details = [...fields.entries()]
-        .filter(([, value]) => String(value).trim())
-        .map(([key, value]) => `*${key[0].toUpperCase()}${key.slice(1)}:* ${String(value).trim()}`);
-      const intro = decodeURIComponent(form.dataset.whatsappBase!.split('?text=')[1] || '');
-      const message = `${intro}\n\n${details.join('\n')}`;
-      window.location.href = `${form.dataset.whatsappBase!.split('?')[0]}?text=${encodeURIComponent(message)}`;
-    });
   });
 </script>
+
+<style>
+  .form-intro { margin: 0; color: var(--muted); font-size: .94rem; }
+  .choice-fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+  .choice-fieldset legend { margin-bottom: .7rem; color: var(--navy); font: 800 .85rem/1.35 var(--display); }
+  .choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+  .choice-grid-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .choice-card { position: relative; display: flex; align-items: center; min-height: 3.2rem; padding: .75rem .85rem; border: 1px solid var(--line); border-radius: .8rem; color: var(--muted); background: var(--white); cursor: pointer; font: 700 .78rem/1.25 var(--display); transition: border-color .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease; }
+  .choice-card:hover { border-color: var(--lime-ink); color: var(--navy); }
+  .choice-card input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .choice-card:has(input:focus-visible) { outline: 3px solid rgb(187 228 54 / 55%); outline-offset: 2px; }
+  .choice-card:has(input:checked) { border-color: var(--lime-ink); color: var(--navy); background: var(--lime); box-shadow: inset 0 0 0 1px var(--lime-ink); }
+  .form-disclosure { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.5; }
+  @media (max-width: 620px) {
+    .choice-grid, .choice-grid-compact { grid-template-columns: 1fr; }
+  }
+</style>
